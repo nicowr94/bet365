@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/bet365/static/css/main.94fa4114.css",
-    "main.js": "/bet365/static/js/main.04b5ea39.js",
+    "main.js": "/bet365/static/js/main.a8f43ada.js",
     "static/js/787.f97b6d24.chunk.js": "/bet365/static/js/787.f97b6d24.chunk.js",
     "static/media/banner_controles.png": "/bet365/static/media/banner_controles.fd90336a93789c321e74.png",
     "static/media/sevilla.svg": "/bet365/static/media/sevilla.5a96fb4b7acd1de5546c.svg",
@@ -43,11 +43,11 @@
     "static/media/array.svg": "/bet365/static/media/array.8165292162f9fb560464.svg",
     "static/media/array_simple.svg": "/bet365/static/media/array_simple.5dbdbf143ca0efa7df95.svg",
     "main.94fa4114.css.map": "/bet365/static/css/main.94fa4114.css.map",
-    "main.04b5ea39.js.map": "/bet365/static/js/main.04b5ea39.js.map",
+    "main.a8f43ada.js.map": "/bet365/static/js/main.a8f43ada.js.map",
     "787.f97b6d24.chunk.js.map": "/bet365/static/js/787.f97b6d24.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.94fa4114.css",
-    "static/js/main.04b5ea39.js"
+    "static/js/main.a8f43ada.js"
   ]
 }
