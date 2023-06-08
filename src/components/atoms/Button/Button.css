@@ -1,0 +1,28 @@
+.a-Button{
+    outline: 0;
+    height: 50px;
+    font-weight: 700;
+    text-align: center;
+    background-color: #126E51;
+    border-radius: 2px;
+    border: none;
+    width: 100%;
+    display: inline-block;
+    cursor: pointer;
+    /* margin: 0 auto 15px; */
+    /* padding: 0 15px; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.a-Button-type1{
+    color: #3f3f3f;
+    background-color: #58d7af;
+}
+.a-Button-type2{
+    color: #3f3f3f;
+    background-color: transparent;
+}

@@ -1,0 +1,23 @@
+.a-Texto-level{
+    /* padding-left: 15px; */
+    padding-bottom: 15px;
+    text-align: left;
+}
+
+.a-Texto-level1{
+    line-height: 20px;
+    color: #282828;
+    font-size: 13px;
+}
+
+.a-Texto-level2{
+    color: #666;
+    font-size: 11px;
+    margin-bottom: 15px;
+    line-height: 18px;
+}
+.a-Texto-level-link{
+    color: #007a56 !important;
+    cursor: pointer;
+    font-weight: bold;
+}

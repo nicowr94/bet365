@@ -1,0 +1,15 @@
+.o-UsuarioControlesCerrarCuenta-text{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.o-UsuarioControlesCerrarCuenta-text-column{
+    display: flex;
+    width: 100%;
+    /* gap: 50px; */
+}
+
+.o-UsuarioControlesCerrarCuenta-checkboxs{
+    display: flex;
+}

@@ -1,0 +1,56 @@
+.o-UsuarioMensajeNuevo-banner{
+    width: 100%; /* Ancho deseado para el contenedor */
+    height: 200px; /* Altura deseada para el contenedor */
+    overflow: hidden; /* Oculta el contenido que se desborda del contenedor */
+    display: flex; /* Muestra la imagen en el centro horizontal y vertical */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; 
+    margin-left: 15px;
+    position: relative;
+    overflow: hidden; 
+    width: calc(100% - 15px);
+    margin-top: 80px;
+    margin-bottom: 60px;
+    align-items: flex-end;
+}
+
+.o-UsuarioMensajeNuevo-banner img{
+    width: auto; /* Ajusta automáticamente el ancho de la imagen */
+    height: 100%;
+    position: absolute;
+}
+.o-UsuarioMensajeNuevo-banner-body{
+    display: flex;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.o-UsuarioMensajeNuevo-banner-body--text{
+    max-width: 275px;
+    color: #fff;
+    margin-bottom: 11px;
+    text-align: center;
+    display: flex;
+    font-size: 14px;
+    line-height: 21px;
+}
+.o-UsuarioMensajeNuevo-banner-body--button{
+    color: #222;
+    padding: 0 11px;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 33px;
+    min-width: 140px;
+    background-color: #58d7af;
+    border-radius: 2px;
+    margin-bottom: 33px;
+    cursor: pointer;
+}

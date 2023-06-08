@@ -1,0 +1,46 @@
+.p-BancoUser-content{
+    height: 100%;
+    width: 100%;
+    background: #ebeded;
+    max-width: 1450px;
+    display: flex;
+    justify-content: center;
+    padding-top: 35px;
+    min-height: calc(100vh - 105px);
+}
+.p-BancoUser-content-elements{
+    width: 100%;
+    max-width: 1080px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    color: black;
+}
+
+.p-BancoUser-content-layout{
+    width: 100%;
+}
+
+.p-BancoUser-content-elements--closed{
+    width: 100%;
+}
+
+.p-BancoUser-content-elements--closed-icon{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.p-BancoUser-content-elements-body{
+    display: flex;
+    flex-direction: column;
+    /* max-width: 536px; */
+    align-items: center;
+    width: 100%;
+}
+
+.p-BancoUser-content-elements-body-content{
+    width: 100%;
+    max-width: 536px;
+    padding-bottom: 70px;
+}

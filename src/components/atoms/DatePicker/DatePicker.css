@@ -1,0 +1,23 @@
+.a-DatePicker{
+    display: flex;
+    margin-left: 15px;
+    background-color: white;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 2px;
+    border-bottom: 1px#d4d4d4;
+    margin-bottom: 1px;
+    overflow: hidden;
+}
+
+.a-DatePicker-text{
+    color: #282828;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 21px;
+}
+
+.a-DatePicker-icon{
+}

@@ -1,0 +1,167 @@
+.PopularModule{
+    background-image: linear-gradient(119deg,#1b4d42,#153c34);
+    border-top: 2px solid #00ffb633;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0 10px;
+    min-height: 200px;
+}
+
+.PopularModule_HeaderWrapper{
+    display: flex;
+    height: 45px;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.PopularModule_Header{
+    display: flex;
+    align-items: center;
+}
+.PopularModule_HeaderText, .PopularModule_HeaderText-bold{
+    font-size: 15px;
+    line-height: 30px;
+    color: #e4e4e4;
+    white-space: break-spaces;
+    font-weight: 700;
+}
+
+.PopularModule_HeaderText-bold{
+    color: #00ffb6;
+    font-weight: 700;
+}
+
+.PopularModule_HeaderChevron{
+    flex: 0 0 13px;
+    width: 13px;
+    height: 9.75px;
+    margin-left: 5px;
+    background-color: #5fe8bd;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    --mixin-svg-inlined: url('../../../icons/array.svg');
+    -webkit-mask-image: var(--mixin-svg-inlined);
+}
+.PopularModule_Info{
+    padding: 0 15px;
+    display: flex;
+}
+
+.PopularModule_Info-item{
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    padding-top: 5px;
+    align-items: flex-start;
+    cursor: pointer;
+    justify-content: space-evenly;
+    border-bottom: none;
+}
+
+.PopularModule_Info-item-title{
+    display: flex;
+    padding: 0 10px 8px;
+    font-size: 14px;
+    line-height: 15px;
+    align-items: center;
+    gap: 5px;
+}
+.PopularModule_Info-item-title-icon{
+    background-image: url('../../../icons/futbol.svg');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 15px;
+    width: 15px;
+}
+
+.PopularModule_Info-item-title-text{
+    color: #ffffff;
+    font-weight: 700;
+    width: 100%;
+}
+
+.PopularModule_Info-item-subtitle{
+    padding: 0 10px 8px;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 700;
+    line-height: 15px;
+}
+
+.PopularModule_Info-item-data{
+    padding: 0 10px 5px;
+    flex-grow: 1;
+}
+
+.PopularModule_Info-item-data-text,.PopularModule_Info-item-data-text-end{
+    position: relative;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #ffffff99;
+    line-height: 15px;
+    padding-left: 17px;
+}
+
+.PopularModule_Info-item-data-text:before,.PopularModule_Info-item-data-text-end:before{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    content: " ";
+    border: 1px solid #a7a7a7;
+    border-radius: 7px;
+    width: 7px;
+    height: 7px;
+}
+
+.PopularModule_Info-item-data-text:after {
+    position: absolute;
+    top: 11px;
+    left: 4px;
+    height: 16px;
+    width: 1px;
+    background-color: #a7a7a7;
+    content: " ";
+}
+
+.PopularModule_Info-item-price{
+    display: flex;
+    padding: 0 10px;
+    height: 45px;
+    width: 100%;
+    align-items: center;
+}
+
+.PopularModule_Info-item-price-old{
+    flex: 0 0 auto;
+    position: relative;
+    font-size: 13px;
+    line-height: 17px;
+    color: #c3c3c3;
+}
+
+.PopularModule_Info-item-price-old:after {
+    position: absolute;
+    top: 50%;
+    left: -1px;
+    right: -1px;
+    height: 1px;
+    background-color: #c3c3c3;
+    opacity: .7;
+    content: " ";
+}
+.PopularModule_Info-item-price-icon{
+    margin: 0 6px 0 5px;
+}
+
+.PopularModule_Info-item-price-new{
+    flex: 0 0 auto;
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 17px;
+    font-weight: 700;
+}

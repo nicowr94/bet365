@@ -1,0 +1,11 @@
+.o-UsuarioControlesAutoexclusion-text{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.o-UsuarioControlesAutoexclusion-text-column{
+    display: flex;
+    width: 100%;
+    /* gap: 50px; */
+}

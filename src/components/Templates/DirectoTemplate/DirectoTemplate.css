@@ -1,0 +1,95 @@
+.directo-template{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vw;
+  }
+  
+  .directo-container {
+      text-align: inherit;
+      height: 100%;
+      padding: 0;
+      height: 100vh;
+
+    }
+    .directo-grid-container > * {
+      /* border: red solid; */
+      max-width: 1400px;
+      /* min-width: 800px; */
+    }
+    
+    .directo-grid-container {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-areas: "directo-menu" "directo-options";
+      grid-template-columns: 100% 100%;
+      height: 100% !important;
+      /* max-width: 1340px !important; */
+
+    }
+    .directo-menu {
+      grid-area: directo-menu;
+      /* background-color: #555; */
+      text-align: center;
+      position: relative;
+  
+    }
+    .directo-layout {
+      grid-area: directo-layout;
+      /* max-width: 600px; */
+      position: relative;
+      /* max-width: 600px; */
+      min-width: 500px;
+      left: -5px;
+      position: relative;
+
+    }
+    .directo-options {
+      grid-area: directo-options;
+      /* display: none; */
+      max-width: 600px;
+      min-width: 450px;
+      position: relative;
+
+    }
+    @media (min-width: 400px) {
+      .directo-grid-container {
+        grid-template-areas: " directo-layout directo-options";
+        grid-template-columns: auto 600px;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      .directo-options {
+        /* display: none; */
+      }
+      .directo-menu {
+        position: fixed;
+      }
+    }
+    @media (min-width: 1300px) {
+      .directo-container {
+        width: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+      .directo-grid-container {
+        /* grid-template-areas: "menu layout options";
+        grid-template-columns: 230px minmax(600px, 1fr) 350px;
+        padding-left: 40px;
+        padding-right: 40px; */
+  
+        grid-template-areas: " directo-layout directo-options";
+        grid-template-columns: minmax(600px, 970px) minmax(300px, 500px);
+        gap: 0;
+      
+      }
+      .directo-options {
+        display: inline-block !important;
+      }
+      .directo-menu {
+        text-align: inherit;
+        position: fixed;
+      }
+    }
+    

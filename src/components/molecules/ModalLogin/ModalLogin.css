@@ -1,0 +1,96 @@
+.m-ModalLogin-content {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 50;
+  background-color: transparent;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.m-ModalLogin-content-bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #00000066;
+}
+
+.m-ModalLogin-content-form {
+  height: 265px;
+  z-index: 100;
+  transform: translateY(105px);
+  width: 435px;
+  background-color: #e4e4e4;
+  animation: delayedVisibility 0 0.25s;
+  border-radius: 0 0 2px 2px;
+  transition: transform 0.3s;
+  padding: 20px 20px 10px;
+}
+.m-ModalLogin-content-form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.m-ModalLogin-content-form-input .custom-input {
+  display: flex;
+  /* flex: 1 1 90%; */
+  font-size: 15px;
+  overflow: hidden;
+  margin: 0;
+  background-color: #ffffff;
+  color: #282828;
+  border-radius: 3px;
+  height: 50px;
+
+  border: 1px solid #a7a7a7;
+  align-self: center;
+  width: 100%;
+  border-radius: 3px;
+  background-color: #fff;
+  padding: 0 10px;
+  width: calc(100% - 20px);
+}
+
+.m-ModalLogin-content-form-input .custom-input:focus {
+  outline: none;
+  /* Otros estilos adicionales que desees agregar aquí */
+}
+
+.m-ModalLogin-content-form-input button {
+  width: 100%;
+  line-height: 22px;
+  border-radius: 3px;
+  border-color: transparent;
+  height: 45px;
+  background-color: #126e51;
+  cursor: pointer;
+  padding: 12px 10px 11px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+  font-size: 15px;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.m-ModalLogin-content-form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 13px;
+  line-height: 17px;
+  color: #126e51;
+  cursor: pointer;
+  padding: 14px 0;
+  margin-left: auto;
+  text-align: end;
+  flex: 60%;
+  font-weight: 500;
+  margin-top: 20px;
+}

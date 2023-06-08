@@ -1,0 +1,43 @@
+.a-card-container{
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #dddddd;
+    line-height: 16px;
+    height: 45px;
+    cursor: pointer;
+    border-bottom: 1px solid #ffffff1a;
+}
+.a-card-containe-text{
+    padding-left: 15px;
+    font-size: 13px;
+    color: #dddddd;
+    line-height: 16px;
+}
+
+.a-card-containe-text:hover {
+    color: #fff;
+}
+
+.a-card-containe-icon{
+    padding-right: 15px;
+    --mixin-svg-inlined: url('../../../icons/array_simple.svg');
+    -webkit-mask-image: var(--mixin-svg-inlined);
+    color: #b8b8b8;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-self: center;
+    content: "";
+    height: 24px;
+    width: 24px;
+    background-color: #cccccc;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    margin-left: -7px;
+    -webkit-mask-size: 7px 12px;
+}

@@ -1,0 +1,178 @@
+.m-ModalUser-content {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 50;
+    background-color: transparent;
+    /* display: flex; */
+    /* align-items: center; */
+    justify-content: center;
+  }
+  
+  .m-ModalUser-content-bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: .6;
+  }
+  
+  .m-ModalUser-content-form {
+    /* height: 265px; */
+    z-index: 100;
+    transform: translateY(105px);
+    width: 375px;
+    background-color: #f8f9fa;
+    animation: delayedVisibility 0 0.25s;
+    border-radius: 0 0 2px 2px;
+    transition: transform 0.3s;
+    /* padding: 20px 20px 10px; */
+    position: absolute;
+    color: #282828;
+
+  }
+  .m-ModalUser-content-form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .m-ModalUser-content-form-input .custom-input {
+    display: flex;
+    /* flex: 1 1 90%; */
+    font-size: 15px;
+    overflow: hidden;
+    margin: 0;
+    background-color: #ffffff;
+    color: #282828;
+    border-radius: 3px;
+    height: 50px;
+  
+    border: 1px solid #a7a7a7;
+    align-self: center;
+    width: 100%;
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 0 10px;
+    width: calc(100% - 20px);
+  }
+  
+  .m-ModalUser-content-form-input .custom-input:focus {
+    outline: none;
+    /* Otros estilos adicionales que desees agregar aquí */
+  }
+  
+  .m-ModalUser-content-form-input button {
+    width: 100%;
+    line-height: 22px;
+    border-radius: 3px;
+    border-color: transparent;
+    height: 45px;
+    background-color: #126e51;
+    cursor: pointer;
+    padding: 12px 10px 11px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  
+    font-size: 15px;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .m-ModalUser-content-form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    font-size: 13px;
+    line-height: 17px;
+    color: #126e51;
+    cursor: pointer;
+    padding: 14px 0;
+    margin-left: auto;
+    text-align: end;
+    flex: 60%;
+    font-weight: 500;
+    margin-top: 20px;
+  }
+  
+.m-ModalUser-content-header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  padding-bottom: 0;
+  /* border: 1px solid red; */
+  width: calc(100% - 30px);
+}
+
+.m-ModalUser-content-header-name{
+  width: 100%;
+  display: block;
+  font-size: 12px;
+  color: #404040;
+  line-height: 17px;
+}
+
+.m-ModalUser-content-header-btn_depositar{
+  min-width: 120px;
+}
+
+.m-ModalUser-content-header2{
+  width: 100%;
+  display: flex;
+  font-size: 12px;
+  color: #404040;
+  line-height: 17px;
+  gap: 50px;
+  padding: 15px;
+
+  border-bottom: 1px solid #d4d4d4;
+  width: calc(100% - 30px);
+}
+
+.m-ModalUser-content-header2-options{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.m-ModalUser-content-header2-options .options-bold{
+  line-height: 20px;
+  font-size: 15px;
+  color: #404040;
+  font-weight: 700;
+}
+
+.m-ModalUser-content-buttons div{
+  padding: 15px;
+  border-bottom: 1px solid #d4d4d4;
+  width: calc(100% - 30px);
+  cursor: pointer;
+}
+
+.m-ModalUser-content-body{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding: 20px 7px;
+  border-bottom: 1px solid #d4d4d4;
+  background-color: #f3f5f4;
+
+}
+.m-ModalUser-content-body-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  font-size: 11px;
+  
+  font-weight: 700;
+  color: #505050;
+  line-height: 17px;
+}

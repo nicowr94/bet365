@@ -1,0 +1,23 @@
+.a-title{
+    padding: 0 15px;
+    color: #00ffb6;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    height: 55px;
+    margin-top: 10px;
+}
+.a-title-text{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    word-break: break-word;
+    word-wrap: break-word;
+    max-height: calc(20px * 2);
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 700;
+}
+

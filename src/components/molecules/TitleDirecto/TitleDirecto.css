@@ -1,0 +1,61 @@
+.m-titleDirecto{
+    display: flex;
+    height: 60px;
+    padding: 0 25px;
+    align-items: center;
+    justify-content: space-between;
+}
+.m-titleDirecto-title{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 25px;
+    font-style: italic;
+    padding-right: 10px;
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+}
+.m-titleDirecto-title svg{
+    width: 12px;
+    height: 20px;
+    fill: #cccccc; 
+}
+
+.m-titleDirecto-options{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.m-titleDirecto-options{
+    color: #ffffffcc;
+    cursor: pointer;
+    display: flex;
+    font-size: 13px;
+    line-height: 17px;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    gap: 20px;
+    position: relative;
+    font-weight: 500;
+}
+
+.m-titleDirecto-options--selected{
+    color: #ffffff;
+    opacity: 1;
+    font-weight: 700;
+}
+
+.m-titleDirecto-options--selected:after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ffffff;
+}

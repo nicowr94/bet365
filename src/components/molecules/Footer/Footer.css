@@ -1,0 +1,138 @@
+.m-footer{
+    min-height: 500px;
+    width: 100%;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #282828;
+
+}
+
+.m-footer-list{
+    width: 100%;
+    border-bottom: 1px solid #545454;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.m-footer-list_content, .m-footer-info_content{
+    display: flex;
+    justify-content: space-between;
+    cursor: default;
+    padding:  25px 0;
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 20px;
+    flex-direction: row;
+
+}
+
+.m-footer-list__column_text{
+    text-align: left;
+    height: 40px;
+    line-height: 17px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    color: #b5b5b5;
+    padding: 0 5px;
+    position: relative;
+}
+.m-footer-list__column_text:hover{
+    color: #f0f0f0;
+}
+
+.m-footer-list__column_text__title{
+    font-weight: 700;
+    width: 100%;
+    padding-top: 20px;
+    line-height: 40px;
+    position: relative;
+    cursor: default;
+    font-size: 14px;
+    color: #ddd;
+}
+.m-footer-info{
+    padding: 15px;
+    width: 100%;
+    border-bottom: 1px solid #545454;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.m-footer-info__images{
+    display: flex;
+    gap: 30px;
+    padding-bottom: 30px;
+}
+.m-footer-info__images img{
+    cursor: pointer;
+}
+
+.m-footer-info__data{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+
+}
+.m-footer-info_content{
+    flex-direction: column;
+    font-size: 11px;
+    color: #b5b5b5;
+    padding: 20px 10px;
+
+}
+.m-footer-info__data_column{
+    text-align: left;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.m-footer-info__data_column_item{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+    min-width: 260px;
+    max-width: 450px;
+}
+
+.m-footer-info__data_column_item div{
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.m-footer-info__data_column_item.list_link{
+    font-size: 14px;
+    height: 40px;
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.m-footer-info__data_column_item.list_link div:hover{
+    color: #f0f0f0;
+}
+
+.m-footer-info__data_column_item img{
+    height: 21px;
+    padding-bottom: 20px;
+
+}
+
+.m-footer-info_content_list{
+    display: flex;
+    gap: 45px;
+    font-size: 14px;
+    font-weight: 500
+}
+.m-footer-info_content_list div{
+    cursor: pointer;
+}

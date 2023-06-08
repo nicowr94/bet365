@@ -1,0 +1,36 @@
+.o-UsuarioBancoDepositar-metodos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 25px;
+    border-bottom: #dddddd 1px solid;
+}
+.o-UsuarioBancoDepositar-form{
+    padding: 25px 0;
+}
+
+.o-UsuarioBancoDepositar-item{
+    padding-top: 10px;
+    width: calc(100% - 16px);
+}
+
+.o-UsuarioBancoDepositar-item-flex{
+    display: flex;
+    width: 100%;
+}
+
+.o-UsuarioBancoDepositar-item-multiple{
+    display: flex;
+    padding-left: 15px;
+    width: 100%;
+}
+
+.o-UsuarioBancoDepositar-item-multiple .a-InputForm{
+    padding: 0;
+}
+
+.o-UsuarioBancoDepositar-item-multiple:first-child input{
+    /* Estilos para el primer hijo */
+    /* border-right: red 1px solid; */
+  }
