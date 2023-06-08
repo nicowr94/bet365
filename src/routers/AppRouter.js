@@ -19,7 +19,7 @@ import {UserContext} from '../../src/context/UserProvider';
 export default function AppRouter() {
   const { user } = useContext(UserContext);
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div>
         <Routes >
           <Route path="/login" Component={LoginPage} />
