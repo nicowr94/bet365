@@ -58,7 +58,7 @@ export default function ModalUser({closeModal,position, closed}) {
                         <div className='options-bold'>$5000.00</div>
                     </div>
                 </div>
-                <div className='m-ModalUser-content-body'>
+                <div className='m-ModalUser-content-body' onClick={()=>{closed(false)}}>
 
                     <Link to={"/usuario/banco"}>
                         <div className='m-ModalUser-content-body-item'>
@@ -87,7 +87,7 @@ export default function ModalUser({closeModal,position, closed}) {
                         </div>
                     </Link>
 
-                    <Link to={"/usuario/Controles"} onClick={()=>{closed(false)}}>
+                    <Link to={"/usuario/Controles"}>
                         <div className='m-ModalUser-content-body-item'>
                             {icon_miActividad}
                             Mi actividad
