@@ -18,19 +18,30 @@ import {UserContext} from '../../src/context/UserProvider';
 
 export default function AppRouter() {
   const { user } = useContext(UserContext);
+
+  const dominio = process.env.PUBLIC_URL
   return (
-    <Router basename={process.env.PUBLIC_URL}>
-      <div>
+    <Router basename={dominio}>
         <Routes >
-          <Route path="/login" Component={LoginPage} />
-          <Route path="/" Component={HomePage} />
-          <Route path="/deport" Component={HomeDeportPage} />
-          <Route path="/directo" Component={DirectoDeportPage} />
-          <Route path="/usuario/banco" Component={BancoUserPage} />
-          <Route path="/usuario/mensaje" Component={BancoMensajePage} />
-          <Route path="/usuario/miCuenta" Component={UserMiCuenta} />
-          <Route path="/usuario/Controles" Component={UserControles} />
-          <Route path="/usuario/Historial" Component={UserHistorial} />
+          {/* <Route path={dominio+"/login"} Component={LoginPage} /> */}
+
+          {/* <Route path={dominio+"/"}  Component={HomePage} />
+          <Route path={dominio+"/deport"} Component={HomeDeportPage} />
+          <Route path={dominio+"/directo"} Component={DirectoDeportPage} />
+          <Route path={dominio+"/usuario/banco"} Component={BancoUserPage} />
+          <Route path={dominio+"/usuario/mensaje"} Component={BancoMensajePage} />
+          <Route path={dominio+"/usuario/miCuenta"} Component={UserMiCuenta} />
+          <Route path={dominio+"/usuario/Controles"} Component={UserControles} />
+          <Route path={dominio+"/usuario/Historial"} Component={UserHistorial} /> */}
+
+          <Route path="/" Component={HomePage} exact />
+          <Route path="deport" Component={HomeDeportPage} />
+          <Route path="directo" Component={DirectoDeportPage} />
+          <Route path="usuario/banco" Component={BancoUserPage} />
+          <Route path="usuario/mensaje" Component={BancoMensajePage} />
+          <Route path="usuario/miCuenta" Component={UserMiCuenta} />
+          <Route path="usuario/Controles" Component={UserControles} />
+          <Route path="usuario/Historial" Component={UserHistorial} />
 
           {/* <PrivateRoute
             path="/"
@@ -38,7 +49,6 @@ export default function AppRouter() {
             isAuthenticated={user.logged}
           /> */}
         </Routes >
-      </div>
     </Router>
   );
 }

@@ -461,7 +461,7 @@ export default function DirectoFutbolAmericano() {
 
   return (
     <div className='home_layout'>
-        <div style={{ backgroundImage: 'linear-gradient(160deg, #364D3C 0%, #383838 400px)'}}>
+        <div style={{ backgroundImage: 'linear-gradient(160deg, #4D422E 0%, #383838 400px)'}}>
             <TitleDirecto title='Fútbol Americano' options={title_options}/>
             {infoTable.element.map((i,index) => {
                return <TableSportsDirecto key={"NavDeport-options-"+index}  title={i.title} info={i.task} title_data={infoTable.titles} />

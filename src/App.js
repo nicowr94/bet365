@@ -9,16 +9,7 @@ import {UserContext} from './context/UserProvider';
 
 import "./App.css";
 
-const init = () => {
-  return JSON.parse(localStorage.getItem("user")) || { logged: false };
-};
-
 export const App =() => {
-  // const { user } = useContext(UserContext)
-
-  // useEffect(() => {
-  //   localStorage.setItem("user", JSON.stringify(user));
-  // }, [user]);
 
   return (
     <UserProvider>
