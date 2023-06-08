@@ -110,7 +110,7 @@ export default function Nav({option = 1}) {
         </div>
       </div>
       {login ? <ModalLogin closeModal={setLogin}/> : null}
-      {modalUser ? <ModalUser closeModal={setModalUser} position={posicionDerecha}/> : null}
+      {modalUser ? <ModalUser closeModal={setModalUser} position={posicionDerecha} closed={setModalUser}/> : null}
     </div>
   )
 }

@@ -5,7 +5,7 @@ import { ReactComponent as MiSVG }  from '../../../../src/icons/icon_mensaje.svg
 import ButtonSimple from '../../atoms/ButtonSimple/ButtonSimple';
 import { Link } from "react-router-dom";
 
-export default function ModalUser({closeModal,position}) {
+export default function ModalUser({closeModal,position, closed}) {
 
     const { user, setUser} = useContext(UserContext);
     const itemModalUser = document.getElementById('divModalUser');
@@ -87,7 +87,7 @@ export default function ModalUser({closeModal,position}) {
                         </div>
                     </Link>
 
-                    <Link to={"/usuario/Controles"} onClick={refreshPage}>
+                    <Link to={"/usuario/Controles"} onClick={()=>{closed(false)}}>
                         <div className='m-ModalUser-content-body-item'>
                             {icon_miActividad}
                             Mi actividad
