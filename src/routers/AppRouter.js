@@ -9,6 +9,7 @@ import BancoMensajePage from "../pages/BancoMensaje/BancoMensaje";
 import UserMiCuenta from "../pages/UserMiCuenta/UserMiCuenta";
 import UserControles from "../pages/UserControles/UserControles";
 import UserHistorial from "../pages/UserHistorial/UserHistorial";
+import NotFound from "../pages/NotFound/NotFound";
 
 import DasboardRoutes from "./DasboardRoutes";
 import PrivateRoute from "./PrivateRoute";
@@ -42,6 +43,7 @@ export default function AppRouter() {
           <Route path="usuario/miCuenta" Component={UserMiCuenta} />
           <Route path="usuario/Controles" Component={UserControles} />
           <Route path="usuario/Historial" Component={UserHistorial} />
+          <Route path="*" Component={NotFound} />
 
           {/* <PrivateRoute
             path="/"
