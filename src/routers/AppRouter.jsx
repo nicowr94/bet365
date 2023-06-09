@@ -9,6 +9,7 @@ import BancoMensajePage from "../pages/BancoMensaje/BancoMensaje";
 import UserMiCuenta from "../pages/UserMiCuenta/UserMiCuenta";
 import UserControles from "../pages/UserControles/UserControles";
 import UserHistorial from "../pages/UserHistorial/UserHistorial";
+import UserMiActividad from "../pages/UserMiActividad/UserMiActividad";
 import NotFound from "../pages/NotFound/NotFound";
 
 import DasboardRoutes from "./DasboardRoutes";
@@ -36,13 +37,14 @@ export default function AppRouter() {
           <Route path={dominio+"/usuario/Historial"} Component={UserHistorial} /> */}
 
           <Route path="/" Component={HomePage} exact />
-          <Route path="deport" Component={HomeDeportPage} />
-          <Route path="directo" Component={DirectoDeportPage} />
-          <Route path="usuario/banco" Component={BancoUserPage} />
-          <Route path="usuario/mensaje" Component={BancoMensajePage} />
-          <Route path="usuario/miCuenta" Component={UserMiCuenta} />
-          <Route path="usuario/Controles" Component={UserControles} />
-          <Route path="usuario/Historial" Component={UserHistorial} />
+          <Route path="deport" Component={HomeDeportPage} exact/>
+          <Route path="directo" Component={DirectoDeportPage} exact/>
+          <Route path="usuario/banco" Component={BancoUserPage} exact/>
+          <Route path="usuario/mensaje" Component={BancoMensajePage} exact/>
+          <Route path="usuario/miCuenta" Component={UserMiCuenta} exact/>
+          <Route path="usuario/Controles" Component={UserControles} exact/>
+          <Route path="usuario/Actividad" Component={UserMiActividad} exact/>
+          <Route path="usuario/Historial" Component={UserHistorial} exact/>
           <Route path="*" Component={NotFound} />
 
           {/* <PrivateRoute

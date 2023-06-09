@@ -87,7 +87,7 @@ export default function ModalUser({closeModal,position, closed}) {
                         </div>
                     </Link>
 
-                    <Link to={"/usuario/Controles"}>
+                    <Link to={"/usuario/Actividad"} >
                         <div className='m-ModalUser-content-body-item'>
                             {icon_miActividad}
                             Mi actividad

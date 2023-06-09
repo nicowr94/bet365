@@ -18,7 +18,7 @@ export default function Nav({option = 1}) {
 
   const openModalUser = () =>{
     const itemUser = document.getElementById('itemUser');
-    const left = document.documentElement.offsetWidth - itemUser.getBoundingClientRect().right;
+    const left = document.documentElement.offsetWidth - itemUser.getBoundingClientRect().right + 20;
     setPosicionDerecha(left)
     setModalUser(true)
   }
@@ -45,7 +45,7 @@ export default function Nav({option = 1}) {
           </div>
 
           <div id="itemUser" className="nav-container-user-container-user" onClick={()=>{openModalUser()}}>
-            <div className="nav-container-user-container-search_Icon--user"></div>
+            <div id="itemUser" className="nav-container-user-container-search_Icon--user"></div>
           </div>
           </>
 
