@@ -16,7 +16,7 @@ export default function UsuarioMiCuentaDatos() {
                 <InputForm name='Monto del límite de depósito en USD' placeholder="Correo" defaultValue={user?.email}/>
             </div>
             <div className='o-UsuarioBancoDepositar-item'>
-                <InputForm  placeholder="Contraseña"/>
+                <InputForm  placeholder="Contraseña" type="password"/>
             </div>
             <div className='o-UsuarioBancoDepositar-item'>
                 <Button text="Actualizar" type={1}/>

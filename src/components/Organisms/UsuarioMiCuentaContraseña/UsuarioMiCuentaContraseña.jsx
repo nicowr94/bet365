@@ -22,10 +22,10 @@ export default function UsuarioMiCuentaContraseña() {
             </div>
 
             <div className='o-UsuarioBancoDepositar-item'>
-                <InputForm  placeholder="Contraseña actual"/>
+                <InputForm  placeholder="Contraseña actual" type="password"/>
             </div>
             <div className='o-UsuarioBancoDepositar-item'>
-                <InputForm  placeholder="Contraseña nueva"/>
+                <InputForm  placeholder="Contraseña nueva" type="password"/>
             </div>
             <div className='o-UsuarioBancoDepositar-item'>
                 <Button text="Cancelar" type={1}/>

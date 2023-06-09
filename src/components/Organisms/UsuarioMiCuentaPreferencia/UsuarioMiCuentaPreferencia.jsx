@@ -334,7 +334,7 @@ export default function UsuarioMiCuentaPreferencia() {
               </div>
 
               <div className='o-UsuarioBancoDepositar-item'>
-                <InputForm  placeholder="Contraseña"/>
+                <InputForm  placeholder="Contraseña" type="password"/>
             </div>
               <div className='o-UsuarioBancoDepositar-item'>
                   <Button text="Cambiar domicilio" type={1}/>
