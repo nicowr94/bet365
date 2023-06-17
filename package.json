@@ -2,7 +2,7 @@
   "name": "bet365",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://nicowr94.github.io/bet365",
+  "homepage": "https://nicowr94.github.io/bet365",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -14,11 +14,12 @@
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "react-svg": "^16.1.15",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
   },
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

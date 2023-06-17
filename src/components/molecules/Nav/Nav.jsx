@@ -40,7 +40,7 @@ export default function Nav({option = 1}) {
             <div className="nav-container-user-container-search_Icon"></div>
           </div>
           <div className="nav-container-user-container-loggin" >
-            <div className="nav-container-user-container-loggin_buttton ">$2,948,288.33</div>
+            <div className="nav-container-user-container-loggin_buttton ">$3,022,350.54</div>
             <div className="nav-container-user-container-loggin_buttton nav-container-user-container-loggin_buttton--info">Depositar</div>
           </div>
 

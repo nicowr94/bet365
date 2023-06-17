@@ -10,6 +10,7 @@ import UserMiCuenta from "../pages/UserMiCuenta/UserMiCuenta";
 import UserControles from "../pages/UserControles/UserControles";
 import UserHistorial from "../pages/UserHistorial/UserHistorial";
 import UserMiActividad from "../pages/UserMiActividad/UserMiActividad";
+import UserAdmin from "../pages/Admin/Admin";
 import NotFound from "../pages/NotFound/NotFound";
 
 import DasboardRoutes from "./DasboardRoutes";
@@ -45,6 +46,7 @@ export default function AppRouter() {
           <Route path="usuario/Controles" Component={UserControles} exact/>
           <Route path="usuario/Actividad" Component={UserMiActividad} exact/>
           <Route path="usuario/Historial" Component={UserHistorial} exact/>
+          <Route path="usuario/admin" Component={UserAdmin} exact/>
           <Route path="*" Component={NotFound} />
 
           {/* <PrivateRoute

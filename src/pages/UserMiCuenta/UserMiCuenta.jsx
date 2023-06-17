@@ -54,21 +54,21 @@ export const UserMiCuenta = () => {
     ]
 
     const body = <div className="p-BancoUser-content-elements">
-                <div>
-                    <MenuUsuario title="Mi cuenta" listOptions={optionMenu} setOptionActive={setOption} optionActive={option}/>
-                </div>
-                <div className="p-BancoUser-content-layout">
-                    <div style={{marginBottom:'25px'}}>
-                        <TitleSimple text={optionMenu[option].label}/>
+                    <div>
+                        <MenuUsuario title="Mi cuenta" listOptions={optionMenu} setOptionActive={setOption} optionActive={option}/>
                     </div>
-                    {contentOption}
+                    <div className="p-BancoUser-content-layout">
+                        <div style={{marginBottom:'25px'}}>
+                            <TitleSimple text={optionMenu[option].label}/>
+                        </div>
+                        {contentOption}
+                    </div>
                 </div>
-            </div>
 
     return (
         <OptionsUserTemplate dataInfo={dataInfo} >
             <div className="p-BancoUser-content">
-                    {body}
+                {body}
             </div>
         </OptionsUserTemplate>
     );

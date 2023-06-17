@@ -61,7 +61,7 @@ export default function HomeTenis() {
   return (
     <div className='home_layout'>
       <NavDeport title='Tenis' url_image={imageUrl} options={navDeportOptions} en_vivo="En vivo  7 >"/>
-      <PartidosOfrecidos title="MLB" data={infoOptions}/>
+      <PartidosOfrecidos title="Abierto de Francia" data={infoOptions}/>
       <PopularModule />
       <Banner />
 

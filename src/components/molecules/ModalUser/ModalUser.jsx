@@ -41,7 +41,7 @@ export default function ModalUser({closeModal,position, closed}) {
                     <div className='m-ModalUser-content-header2-options'>
                         <div>{user.name}</div>
                         {/* <div style={{fontSize:'12px'}} >{user.name}</div> */}
-                        <div className='options-bold'>$2,948,288.33</div>
+                        <div className='options-bold'>$3,022,350.54</div>
                     </div>
                     <div className='m-ModalUser-content-header-btn_depositar'>
                         <ButtonSimple text="Depositar"/>
@@ -51,7 +51,7 @@ export default function ModalUser({closeModal,position, closed}) {
                 <div className='m-ModalUser-content-header2'>
                     <div className='m-ModalUser-content-header2-options'>
                         <div>Saldo retirable</div>
-                        <div className='options-bold'>$2,948,288.33</div>
+                        <div className='options-bold'>$3,022,350.54</div>
                     </div>
                     <div className='m-ModalUser-content-header2-options'>
                         <div>Bono</div>

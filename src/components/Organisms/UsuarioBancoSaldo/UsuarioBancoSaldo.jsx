@@ -18,7 +18,7 @@ export default function UsuarioBancoSaldo() {
       <div className='o-UsuarioBancoSaldo-container-column'>
           <div className='o-UsuarioBancoSaldo-container-header'>
             <TitleSimple text='Retirable' bold={false} fontSize={18}/>
-            <TitleSimple text='$2,948,288.33' bold={true} fontSize={25}/>
+            <TitleSimple text='$3,022,350.54' bold={true} fontSize={25}/>
           </div>
           <div className='o-UsuarioBancoSaldo-container-body'>
             <ButtonSimple text="Depositar"/>
