@@ -1,11 +1,12 @@
 import {useContext, useState, useRef} from "react";
 import OptionsUserTemplate from "../../components/Templates/OptionsUserTemplate/OptionsUserTemplate";
+import { Link } from "react-router-dom";
 import {UserContext} from '../../../src/context/UserProvider';
 import "./Admin.css";
 import parseExcel from './ParseExcel';
 
 export const Admin = () => {
-    const { user, deport, setDeport } = useContext(UserContext);
+    const { user, deport, setDeport, setData } = useContext(UserContext);
     const fileInputRef = useRef(null);
     let dataInfo ={}
 
@@ -26,18 +27,33 @@ export const Admin = () => {
         }
     };
 
+    const saveData = () => {
+        if (!excelData) return
+        setData(excelData)
+        localStorage.setItem("data", JSON.stringify(excelData))
+    }
     return (
         <OptionsUserTemplate dataInfo={dataInfo} >
             <div className="p-BancoUser-content">
-               <p>admin</p>
-               <input type="file" ref={fileInputRef} onChange={handleFileChange} />
+              <div className="p-admin-content">
+                <p className="p-admin-title">Actualizar datos</p>
+                <input id="input-admin" type="file" ref={fileInputRef} onChange={handleFileChange} style={{display:'none'}}/>
 
-                {excelData && (
-                    <div>
-                    <h2>Datos del archivo Excel:</h2>
-                    <pre>{JSON.stringify(excelData, null, 2)}</pre>
-                    </div>
-                )}
+                <div className="p-admin-input" onClick={()=>{fileInputRef?.current.click()}}>
+                        Seleccionar excel
+                </div>
+
+                    {excelData && (
+                        <div>
+                        <h3 className="p-admin-alert">Datos del cargados del Excel</h3>
+                        </div>
+                    )}
+
+                <Link to={"/"} onClick={() => {saveData()}}>
+                    <div className="p-admin-button">Guardar</div>
+                </Link>
+                {/* <button className="p-admin-button" onClick={() => {saveData()}}>Guardar</button> */}
+              </div>
             </div>
         </OptionsUserTemplate>
     );

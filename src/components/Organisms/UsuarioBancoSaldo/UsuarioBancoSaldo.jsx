@@ -1,9 +1,11 @@
-import React from 'react'
+import {useContext} from 'react'
 import ButtonSimple from '../../atoms/ButtonSimple/ButtonSimple';
+import {UserContext} from '../../../../src/context/UserProvider';
 import TitleSimple from '../../atoms/TitleSimple/TitleSimple';
 import "./UsuarioBancoSaldo.css";
 
 export default function UsuarioBancoSaldo() {
+  const { user } = useContext(UserContext);
 
   const list = [
     {label:'Deporte - Bonos de apuesta'},
@@ -18,7 +20,7 @@ export default function UsuarioBancoSaldo() {
       <div className='o-UsuarioBancoSaldo-container-column'>
           <div className='o-UsuarioBancoSaldo-container-header'>
             <TitleSimple text='Retirable' bold={false} fontSize={18}/>
-            <TitleSimple text='$3,022,350.54' bold={true} fontSize={25}/>
+            <TitleSimple text={'$'+user.saldo} bold={true} fontSize={25}/>
           </div>
           <div className='o-UsuarioBancoSaldo-container-body'>
             <ButtonSimple text="Depositar"/>

@@ -11,7 +11,7 @@ export default function UsuarioMiCuentaDatos() {
     <div className="o-UsuarioMensajeNuevo" style={{gap:'5px'}}>
 
            <TitleSimple text="Número de contacto" bold={false} fontSize={12}/>
-           <TitleSimple text="0051987654321" bold={true} fontSize={16}/>
+           <TitleSimple text={user?.numero_contacto} bold={true} fontSize={16}/>
            <div className='o-UsuarioBancoDepositar-item'>
                 <InputForm name='Monto del límite de depósito en USD' placeholder="Correo" defaultValue={user?.email}/>
             </div>

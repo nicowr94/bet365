@@ -6,7 +6,7 @@ import PartidosOfrecidos from "../../molecules/PartidosOfrecidos/PartidosOfrecid
 import PopularModule from "../../molecules/PopularModule/PopularModule";
 import Card from "../../atoms/Card/Card";
 import Title from "../../atoms/Title/Title";
-export default function HomeBeisbol() {
+export default function HomeBeisbol({dataDeport}) {
   const navDeportOptions = [{label:'Cupones'},{label:'Futuras'},{label:'Ofertas'}]
   const imageUrl = 'https://www.bet365.com/sports-assets/sports/SplashModule/assets/splash-headers/16-Baseball-desktop.jpg'
 
@@ -77,10 +77,25 @@ export default function HomeBeisbol() {
 },
 ]
 
+let itemDB = infoOptions
+
+  if (dataDeport.items.length > 0) {
+    itemDB = dataDeport.items.map( (item, index) => {
+        const element = {...item, 
+          team1_url:infoOptions[index].team1_url,
+          team2_url:infoOptions[index].team2_url,
+          img_svg:infoOptions[index].img_svg,
+        }
+        return element
+    })
+  }
+  console.log('adadadsadsadasdsadsad');
+  console.log(itemDB);
+
   return (
     <div className='home_layout'>
       <NavDeport title='Béisbol' url_image={imageUrl} options={navDeportOptions} en_vivo="En vivo  9 >"/>
-      <PartidosOfrecidos title="MLB" data={infoOptions}/>
+      <PartidosOfrecidos title={dataDeport.titulo} data={itemDB}/>
       <PopularModule />
       <Banner />
 

@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect, useContext } from "react";
+import React, { useReducer, useEffect, useState } from "react";
 
 import { AuthContext } from "./auth/AuthContext";
 
@@ -6,11 +6,9 @@ import { authReducer } from "./auth/authReducer";
 import AppRouter from "./routers/AppRouter";
 import UserProvider from './context/UserProvider';
 import {UserContext} from './context/UserProvider';
-
 import "./App.css";
 
 export const App =() => {
-
   return (
     <UserProvider>
       <AppRouter />

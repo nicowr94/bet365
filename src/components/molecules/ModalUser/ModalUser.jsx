@@ -41,7 +41,7 @@ export default function ModalUser({closeModal,position, closed}) {
                     <div className='m-ModalUser-content-header2-options'>
                         <div>{user.name}</div>
                         {/* <div style={{fontSize:'12px'}} >{user.name}</div> */}
-                        <div className='options-bold'>$3,022,350.54</div>
+                        <div className='options-bold'>${user.saldo}</div>
                     </div>
                     <div className='m-ModalUser-content-header-btn_depositar'>
                         <ButtonSimple text="Depositar"/>
@@ -51,11 +51,11 @@ export default function ModalUser({closeModal,position, closed}) {
                 <div className='m-ModalUser-content-header2'>
                     <div className='m-ModalUser-content-header2-options'>
                         <div>Saldo retirable</div>
-                        <div className='options-bold'>$3,022,350.54</div>
+                        <div className='options-bold'>${user.saldo_retirable}</div>
                     </div>
                     <div className='m-ModalUser-content-header2-options'>
                         <div>Bono</div>
-                        <div className='options-bold'>$5000.00</div>
+                        <div className='options-bold'>${user.bono}</div>
                     </div>
                 </div>
                 <div className='m-ModalUser-content-body' onClick={()=>{closed(false)}}>
@@ -106,6 +106,11 @@ export default function ModalUser({closeModal,position, closed}) {
                 <div className='m-ModalUser-content-buttons'>
                     <div>Juego responsable</div>
                     <div>Ayuda</div>
+                    <Link to={"/usuario/admin"}>
+                        <div>
+                            Administrador
+                        </div>
+                    </Link>
                     {/* <div onClick={()=>{loggout_user()}}>Salir</div> */}
                     <Link to={"/"}  onClick={()=>{loggout_user()}}>
                         <div>Salir</div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import { useContext } from 'react'
 import NavDeport from '../../molecules/NavDeport/NavDeport'
 import Banner from '../../atoms/Banner/Banner'
 import Footer from '../../molecules/Footer/Footer'
@@ -6,10 +6,10 @@ import PartidosOfrecidos from "../../molecules/PartidosOfrecidos/PartidosOfrecid
 import PopularModule from "../../molecules/PopularModule/PopularModule";
 import Card from "../../atoms/Card/Card";
 import Title from "../../atoms/Title/Title";
-export default function HomeFutbol() {
+
+export default function HomeFutbol({dataDeport}) {
   const navDeportOptions = [{label:'Cupones'},{label:'Especiales'},{label:'Ofertas'},{label:'Jackpots'},{label:'Juegos gratis'}]
   const imageUrl = 'https://www.bet365.com/sports-assets/sports/SplashModule/assets/splash-headers/1-Soccer-desktop.jpg'
-
   const partidosProximo = [
     {label:'Ligas principales'},
     {label:'Próximas 12 horas'},
@@ -95,10 +95,23 @@ export default function HomeFutbol() {
 },
 ]
 
+  let itemDB = infoOptions
+
+  if (dataDeport.items.length > 0) {
+    itemDB = dataDeport.items.map( (item, index) => {
+        const element = {...item, 
+          team1_url:infoOptions[index].team1_url,
+          team2_url:infoOptions[index].team2_url,
+          img_svg:infoOptions[index].img_svg,
+        }
+        return element
+    })
+  }
+  
   return (
     <div className='home_layout'>
       <NavDeport title='Futbol' url_image={imageUrl} options={navDeportOptions} en_vivo="En vivo   7 >"/>
-      <PartidosOfrecidos data={infoOptions}/>
+      <PartidosOfrecidos data={itemDB} title={dataDeport.titulo} />
       <PopularModule />
       <Banner />
 

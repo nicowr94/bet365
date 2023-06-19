@@ -20,6 +20,58 @@ import ListaJuegos from "../../molecules/ListaJuegos/ListaJuegos";
 
 export default function MisPublicaciones() {
 
+  const {  data } = useContext(UserContext);
+
+  const convertirJSON = (jsonData) => {
+    // Crear un objeto para almacenar los resultados
+    const resultados = {};
+  
+    // Recorrer cada objeto del JSON
+    jsonData.forEach((objeto) => {
+      const { deporte, equipo1, equipo2, tiempo, contador, columna1_score1, columna1_score2, columna2_score1, columna2_score2, puntaje1, puntaje2, puntaje3 } = objeto;
+  
+      // Verificar si ya existe una entrada para el deporte en los resultados
+      if (!resultados[deporte]) {
+        resultados[deporte] = {
+          deporte: deporte,
+          items: []
+        };
+      }
+  
+      // Crear el objeto de información (info)
+      const info = {
+        text1: equipo1,
+        text2: equipo2,
+        count: tiempo,
+        count2: contador,
+        numb1: columna1_score1,
+        numb2: columna1_score2,
+        numb1_data: `(${columna1_score1})`,
+        numb2_data: `(${columna1_score2})`
+      };
+  
+      // Crear el objeto de datos (data)
+      const data = {
+        numb1: puntaje1,
+        numb2: puntaje2,
+        numb3: puntaje3
+      };
+  
+      // Agregar el objeto info y data al objeto item
+      const item = {
+        info: info,
+        data: data
+      };
+  
+      // Agregar el objeto item al arreglo de items del deporte correspondiente
+      resultados[deporte].items.push(item);
+    });
+  
+    // Devolver los resultados convertidos
+    return Object.values(resultados);
+  }
+  
+
   const partidosProximo = [
     {label:'Latinoamérica'},
     {label:'Próximos partidos'}
@@ -86,6 +138,33 @@ export default function MisPublicaciones() {
     img_svg: true
 },
 ]
+  let itemDB = infoOptions
+
+  if (data.length > 0) {
+    const dataSinFormato = data.find((item) => item.tabla === "Partidos ofrecidos").items
+    itemDB = dataSinFormato.map( (item, index) => {
+        const element = {...item, 
+          team1_url:infoOptions[index].team1_url,
+          team2_url:infoOptions[index].team2_url,
+          img_svg:infoOptions[index].img_svg,
+        }
+        return element
+    })
+  }
+
+
+let dataTotalDeportes = {}
+let itemDBFutbol = futbol_en_vivo
+let itemDBTenis = tenis_en_vivo
+let itemDBBeisbol = beisbol_en_vivo
+if (data.length > 0) {
+  const dataSinFormato = data.find((item) => item.tabla === "Tabla home").items
+  dataTotalDeportes = convertirJSON(dataSinFormato)
+  itemDBFutbol = dataTotalDeportes.find((item) => item.deporte === "Futbol")?.items
+  itemDBTenis = dataTotalDeportes.find((item) => item.deporte === "Tenis")?.items
+  itemDBBeisbol = dataTotalDeportes.find((item) => item.deporte === "Beisbol")?.items
+}
+// let itemDBFutbol = data.length>0 ? data.find((item) => item.tabla === "Tabla home").items : futbol_en_vivo;
 
   return (
     <div className="home_layout">
@@ -93,11 +172,14 @@ export default function MisPublicaciones() {
         <BannerInfo />
         <Tabs>
           <PopularModule />
-          <PartidosOfrecidos data={infoOptions}/>
+          <PartidosOfrecidos data={itemDB}/>
           <Title text="En vivo"/>
-          <TableSports title='Fútbol' info={futbol_en_vivo} title_data={[{name:'1'},{name:'X'},{name:'2'}]} bg_color={'#364D3C'}/>
-          <TableSports title='Tenis' info={tenis_en_vivo} title_data={[{name:'1'},{name:'2'}]} bg_color={'#3F4D32'}/>
-          <TableSports title='Béisbol' info={beisbol_en_vivo} title_data={[{name:'Hándicap'},{name:'Total'},{name:'Ganador'}]} bg_color={'#4D3E36 '}/>
+          <TableSports title='Fútbol' info={itemDBFutbol} title_data={[{name:'1'},{name:'X'},{name:'2'}]} bg_color={'#364D3C'}/>
+          {/* <TableSports title='Fútbol' info={itemDBFutbol.find((item) => item.tabla === "Futbol").items} title_data={[{name:'1'},{name:'X'},{name:'2'}]} bg_color={'#  '}/> */}
+          
+          
+          <TableSports title='Tenis' info={itemDBTenis} title_data={[{name:'1'},{name:'2'}]} bg_color={'#3F4D32'}/>
+          <TableSports title='Béisbol' info={itemDBBeisbol} title_data={[{name:'Hándicap'},{name:'Total'},{name:'Ganador'}]} bg_color={'#4D3E36 '}/>
 
 
           <Title text="Próximos partidos" img="futbol.svg"/>

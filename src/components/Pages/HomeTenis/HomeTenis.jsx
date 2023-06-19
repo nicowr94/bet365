@@ -8,7 +8,7 @@ import Card from "../../atoms/Card/Card";
 import Title from "../../atoms/Title/Title";
 import "./HomeTenis.css";
 
-export default function HomeTenis() {
+export default function HomeTenis({dataDeport}) {
   const navDeportOptions = [{label:'Partidos'},{label:'Especiales'},{label:'Ofertas'}]
   const imageUrl = 'https://www.bet365.com/sports-assets/sports/SplashModule/assets/splash-headers/13-Tennis-desktop.jpg'
 
@@ -58,10 +58,23 @@ export default function HomeTenis() {
 },
 ]
 
+let itemDB = infoOptions
+
+  if (dataDeport?.items?.length > 0) {
+    itemDB = dataDeport?.items.map( (item, index) => {
+        const element = {...item, 
+          team1_url:infoOptions[index].team1_url || infoOptions[0].team1_url ,
+          team2_url:infoOptions[index].team2_url || infoOptions[0].team2_url,
+          img_svg:infoOptions[index].img_svg,
+        }
+        return element
+    })
+  }
+
   return (
     <div className='home_layout'>
       <NavDeport title='Tenis' url_image={imageUrl} options={navDeportOptions} en_vivo="En vivo  7 >"/>
-      <PartidosOfrecidos title="Abierto de Francia" data={infoOptions}/>
+      <PartidosOfrecidos title={dataDeport?.titulo} data={itemDB}/>
       <PopularModule />
       <Banner />
 

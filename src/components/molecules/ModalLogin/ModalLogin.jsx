@@ -4,11 +4,19 @@ import {UserContext} from '../../../../src/context/UserProvider';
 
 export default function ModalLogin({closeModal, position}) {
 
-    const { user, setUser} = useContext(UserContext);
+    const { user, setUser, data} = useContext(UserContext);
+
+    const dataUsuarioExcel = data.find((item) => item.tabla === "Usuario").items[0]
 
     const dateUser = {
-        name: 'Carlillozone',
-        email: 'carlillozone@gmail.com'
+        name: dataUsuarioExcel?.nombre,
+        email: dataUsuarioExcel?.correo,
+        numero_contacto:dataUsuarioExcel?.numero_contacto,
+        domicilio:dataUsuarioExcel?.domicilio,
+        codigo_postal:dataUsuarioExcel?.codigo_postal,
+        saldo:dataUsuarioExcel?.saldo,
+        saldo_retirable:dataUsuarioExcel?.saldo_retirable,
+        bono:dataUsuarioExcel?.bono
     }
 
     const loggin_user = () =>{

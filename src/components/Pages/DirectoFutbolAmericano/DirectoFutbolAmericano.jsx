@@ -9,7 +9,7 @@ import Title from "../../atoms/Title/Title";
 import TableSportsDirecto from '../../molecules/TableSportsDirecto/TableSportsDirecto';
 import TitleDirecto from '../../molecules/TitleDirecto/TitleDirecto';
 
-export default function DirectoFutbolAmericano() {
+export default function DirectoFutbolAmericano({getImages, dataDeport}) {
   const navDeportOptions = [{label:'Cupones'},{label:'Especiales'},{label:'Ofertas'},{label:'Jackpots'},{label:'Juegos gratis'}]
   const imageUrl = 'https://www.bet365.com/sports-assets/sports/SplashModule/assets/splash-headers/1-Soccer-desktop.jpg'
 
@@ -459,12 +459,47 @@ export default function DirectoFutbolAmericano() {
 
   const title_options = [{label:'Línea de gol - En directo'},{label:'Hándicap asiático - En directo'},{label:'Encuentro - Goles'},{label:'Resultado final'}]
 
+  const lista_imagenes = [
+    "https://www.imagecache365.com/SoccerSilks/Mallorca_Home_23.svg",
+    "https://www.imagecache365.com/SoccerSilks/Barcelona_Home_23.svg",
+    "https://www.imagecache365.com/SoccerSilks/Elche_Home_23.svg",
+    "https://www.imagecache365.com/SoccerSilks/Cadiz_Home.svg",
+    "https://www.imagecache365.com/SoccerSilks/Espanyol_Home_23.svg",
+    "https://www.imagecache365.com/SoccerSilks/UD-Almeria-Away-23.svg",
+    "https://www.imagecache365.com/SoccerSilks/Real_Valladolid_Home.svg",
+    "https://www.imagecache365.com/SoccerSilks/Getafe_Away_23.svg",
+    "https://www.imagecache365.com/SoccerSilks/Bayern_Munich_Home_23.svg",
+    "https://www.imagecache365.com/SoccerSilks/Borussia_Dortmund_Home_23.svg"
+  ]
+
+  let itemDB = []
+
+  if (dataDeport?.titulos.length > 0) {
+    itemDB = dataDeport.titulos.map( (titulos, index) => {
+        const newTitulo = titulos.items.map( (item, index) => {
+          const images = getImages(lista_imagenes)
+          const element = {...item, 
+            info:{...item.info,
+              team1_url:images[0],
+              team2_url:images[1],}
+          }
+          return element
+        })
+        const res = {...titulos, items:newTitulo}
+        return res
+    })
+  }
+
+
+  console.log('nicolas');
+  console.log(itemDB);
+
   return (
     <div className='home_layout'>
         <div style={{ backgroundImage: 'linear-gradient(160deg, #4D422E 0%, #383838 400px)'}}>
             <TitleDirecto title='Fútbol Americano' options={title_options}/>
-            {infoTable.element.map((i,index) => {
-               return <TableSportsDirecto key={"NavDeport-options-"+index}  title={i.title} info={i.task} title_data={infoTable.titles} />
+            {itemDB.map((i,index) => {
+               return <TableSportsDirecto key={"NavDeport-options-"+index}  title={i.titulo} info={i.items} title_data={infoTable.titles} />
             })}
         </div>
         <Footer />

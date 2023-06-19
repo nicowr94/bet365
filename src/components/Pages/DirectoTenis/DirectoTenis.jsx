@@ -9,7 +9,7 @@ import Title from "../../atoms/Title/Title";
 import TableSportsDirecto from '../../molecules/TableSportsDirecto/TableSportsDirecto';
 import TitleDirecto from '../../molecules/TitleDirecto/TitleDirecto';
 
-export default function DirectoTenis() {
+export default function DirectoTenis({getImages, dataDeport}) {
   const navDeportOptions = [{label:'Cupones'},{label:'Especiales'},{label:'Ofertas'},{label:'Jackpots'},{label:'Juegos gratis'}]
   const imageUrl = 'https://www.bet365.com/sports-assets/sports/SplashModule/assets/splash-headers/1-Soccer-desktop.jpg'
 
@@ -24,7 +24,7 @@ export default function DirectoTenis() {
       element:[
         {
           title:'Challenger Tyler',
-          task:[
+          items:[
             {
               info:{
                 text1:'Dane Sweeny',
@@ -79,12 +79,18 @@ export default function DirectoTenis() {
 
   const title_options = [{label:'Ganador'},{label:'Proximo juego'},{label:'Set actual'}]
 
+  let itemDB = infoTable.element
+
+  if (dataDeport?.titulos.length > 0) {
+    itemDB = dataDeport
+  }
+
   return (
     <div className='home_layout'>
         <div style={{ backgroundImage: 'linear-gradient(160deg, #3F4D32  0%, #383838 400px)', minHeight: '650px'}}>
             <TitleDirecto title='Tenis' options={title_options}/>
-            {infoTable.element.map((i,index) => {
-               return <TableSportsDirecto key={"NavDeport-options-"+index}  title={i.title} info={i.task} title_data={infoTable.titles} />
+            {itemDB.titulos.map((i,index) => {
+               return <TableSportsDirecto key={"NavDeport-options-"+index}  title={i.titulo} info={i.items} title_data={infoTable.titles} />
             })}
         </div>
         <Footer />

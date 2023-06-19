@@ -8,7 +8,7 @@ import PopularModule from "../../molecules/PopularModule/PopularModule";
 import Card from "../../atoms/Card/Card";
 import Title from "../../atoms/Title/Title";
 
-export default function HomeBasquet() {
+export default function HomeBasquet({dataDeport}) {
 
   const partidosProximo = [
     {label:'Apuestas destacadas'},
@@ -42,10 +42,36 @@ export default function HomeBasquet() {
 
   const navDeportOptions = [{label:'Cupones'},{label:'Futuras'},{label:'Ofertas'}]
   const imageUrl = 'https://www.bet365.com/sports-assets/sports/SplashModule/assets/splash-headers/18-Basketball-desktop.jpg'
+
+
+  const infoOptions =[{
+    title:'Dom 19:00',
+    title_number:'6',
+    team1_url:'mia_heat.svg',
+    team1_name:'MIA Healt',
+    team2_url:'den_nuggets.svg', 
+    team2_name:'DEN Nuggets',
+    valor1:'1.90',
+    valor2:'1.90',
+    img_svg: true
+}
+]
+  let itemDB = infoOptions
+
+  if (dataDeport?.items?.length > 0) {
+    itemDB = dataDeport?.items.map( (item, index) => {
+        const element = {...item, 
+          team1_url:infoOptions[index].team1_url || infoOptions[0].team1_url ,
+          team2_url:infoOptions[index].team2_url || infoOptions[0].team2_url,
+          img_svg:infoOptions[index].img_svg,
+        }
+        return element
+    })
+  }
   return (
     <div className='home_layout'>
       <NavDeport title='Básquetbol' url_image={imageUrl} options={navDeportOptions} en_vivo="En vivo   7 >"/>
-      <PartidoEncuentro />
+      <PartidoEncuentro title={dataDeport?.titulo} data={itemDB}/>
       <PopularModule />
 
       <Banner />

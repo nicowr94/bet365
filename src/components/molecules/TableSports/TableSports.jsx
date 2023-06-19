@@ -1,7 +1,21 @@
-import React from 'react'
+import {useContext, useState} from "react";
+import {UserContext} from '../../../../src/context/UserProvider';
 import "./TableSports.css";
 
 export default function TableSports({title, info, bg_color = '#364D3C', title_data}) {
+  const { apuesta, setApuesta } = useContext(UserContext);
+
+  const setDataModal = (element, team, val) => {
+    const data = {
+        team_select: team,
+        monto: val,
+        title: element.info.text1 + " vs " + element.info.text2,
+    }
+    setApuesta(data)
+    console.log(data);
+    console.log(team);
+  }
+
   return (
     // <div>{title}</div>
     <div className="m-TableSports-container" style={{ backgroundImage: 'linear-gradient(160deg, '+bg_color+' 0%, #383838 400px)'}}>
@@ -54,11 +68,11 @@ export default function TableSports({title, info, bg_color = '#364D3C', title_da
             <div className="m-TableSports-container-number-body">
                 {info.map((i,index) => (
                         <div className="m-TableSports-container-number-body-item" key={"TableSports-numberbody-"+index}>
-                                <div className="text__subtittle text_alert">{i.data.numb1}</div>
-                                <div className="text__subtittle text_alert">{i.data.numb2}</div>
+                                <div className="text__subtittle text_alert" onClick={() =>{setDataModal(i, i.info.text1, i.data.numb1)}}>{i.data.numb1}</div>
+                                <div className="text__subtittle text_alert" onClick={() =>{setDataModal(i, (i.data.numb3 ? 'Empate' : i.info.text2), i.data.numb2)}}>{i.data.numb2}</div>
                                 {
                                     i.data.numb3
-                                    ? <div className="text__subtittle text_alert">{i.data.numb3}</div>
+                                    ? <div className="text__subtittle text_alert" onClick={() =>{setDataModal(i, i.info.text2, i.data.numb3)}}>{i.data.numb3}</div>
                                     : null
                                 }
                         </div>

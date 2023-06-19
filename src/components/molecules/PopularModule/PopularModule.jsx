@@ -1,31 +1,38 @@
-import React from 'react'
+import {useContext} from 'react'
 import "./PopularModule.css";
+import {UserContext} from '../../../../src/context/UserProvider';
 
 export default function PopularModule() {
 
-    const infoOptions =[{
-        title:'Sevilla v Roma',
-        text1:'Roma levantará el trofeo',
-        text2:'Tammy Abraham - marcará en cualquier momento',
-        text3:'Lorenzo Pellegrini - Más de 0.5 asistencias',
-        val1:'8.50',
-        val2:'9.50',
+    const {  data } = useContext(UserContext);
+
+    const dataDefault =[{
+        titulo:'Sevilla v Roma',
+        texto1:'Roma levantará el trofeo',
+        texto2:'Tammy Abraham - marcará en cualquier momento',
+        texto3:'Lorenzo Pellegrini - Más de 0.5 asistencias',
+        valor_anterior:'8.50',
+        valor_nuevo:'9.50',
     },{
-        title:'Sevilla v Roma',
-        text1:'Encuentro - Resultado - Sevilla',
-        text2:'Erik Lamela - Más de 0.5 remates al arco',
-        text3:'Youssef En-Nesyri - Más de 0.5 remates al arco',
-        val1:'6.00',
-        val2:'6.50',
+        titulo:'Sevilla v Roma',
+        texto1:'Encuentro - Resultado - Sevilla',
+        texto2:'Erik Lamela - Más de 0.5 remates al arco',
+        texto3:'Youssef En-Nesyri - Más de 0.5 remates al arco',
+        valor_anterior:'6.00',
+        valor_nuevo:'6.50',
     },{
-        title:'Sevilla v Roma',
-        text1:'Encuentro - Resultado - Sevilla',
-        text2:'Youssef En-Nesyri - marcará en cualquier momento',
-        text3:'Más de 2 goles',
-        val1:'8.00',
-        val2:'9.00',
+        titulo:'Sevilla v Roma',
+        texto1:'Encuentro - Resultado - Sevilla',
+        texto2:'Youssef En-Nesyri - marcará en cualquier momento',
+        texto3:'Más de 2 goles',
+        valor_anterior:'8.00',
+        valor_nuevo:'9.00',
     },
     ]
+
+    const itemDB = data.length>0 ? data.find((item) => item.tabla === "Aumento de apuesta").items : dataDefault;
+
+
   return (
     <div className="PopularModule">
         <div className="PopularModule_HeaderWrapper ">
@@ -41,23 +48,23 @@ export default function PopularModule() {
         </div>
 
         <div className="PopularModule_Info">
-            {infoOptions.map((option, index) => 
+            {itemDB.map((option, index) => 
               (
                 <div className="PopularModule_Info-item "  key={"PopularModule_Info-"+index}>
                     <div className="PopularModule_Info-item-title ">
                         <div className="PopularModule_Info-item-title-icon "></div>
-                        <div className="PopularModule_Info-item-title-text ">{option.title}</div>
+                        <div className="PopularModule_Info-item-title-text ">{option.titulo}</div>
                     </div>
                     <div className="PopularModule_Info-item-subtitle">Crear apuesta</div>
                     <div className="PopularModule_Info-item-data">
-                        <div className="PopularModule_Info-item-data-text">{option.text1}</div>
-                        <div className="PopularModule_Info-item-data-text">{option.text2}</div>
-                        <div className="PopularModule_Info-item-data-text-end ">{option.text3}</div>
+                        <div className="PopularModule_Info-item-data-text">{option.texto1}</div>
+                        <div className="PopularModule_Info-item-data-text">{option.texto2}</div>
+                        <div className="PopularModule_Info-item-data-text-end ">{option.texto3}</div>
                     </div>
                     <div className="PopularModule_Info-item-price">
-                        <div className="PopularModule_Info-item-price-old">{option.val1}</div>
+                        <div className="PopularModule_Info-item-price-old">{option.valor_anterior}</div>
                         <div className="PopularModule_Info-item-price-icon PopularModule_HeaderChevron"></div>
-                        <div className="PopularModule_Info-item-price-new">{option.val2}</div>
+                        <div className="PopularModule_Info-item-price-new">{option.valor_nuevo}</div>
                     </div>
                 </div>
             ))}

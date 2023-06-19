@@ -1,7 +1,7 @@
 import React from 'react'
 import "./PartidoEncuentro.css";
 
-export default function PartidoEncuentro() {
+export default function PartidoEncuentro({title = "Partidos ofrecidos", data}) {
 
   const infoOptions =[{
     title:'Dom 19:00',
@@ -18,10 +18,10 @@ export default function PartidoEncuentro() {
   return (
         <div className="PartidoEncuentro">
         <div className="PartidoEncuentro-Header ">
-            <div className="PartidoEncuentro-Header_Title ">Partidos ofrecidos</div>
+            <div className="PartidoEncuentro-Header_Title ">{title}</div>
         </div>
         <div className="PartidoEncuentro-list">
-            {infoOptions.map((option, index) => 
+            {data.map((option, index) => 
               (
                 <div className="PartidoEncuentro-item "  key={"PartidoEncuentro-"+index}>
                     <div className="PartidoEncuentro-item-title ">
@@ -65,11 +65,11 @@ export default function PartidoEncuentro() {
                     <div className="PartidoEncuentro-item-price">
                         <div className="PartidoEncuentro-ActionCTA-options">
                             <div className="PartidoEncuentro-ActionCTA-options_text">+8.5</div>
-                            <div className="PartidoEncuentro-ActionCTA-options_text text_alert">{option.val1}</div>
+                            <div className="PartidoEncuentro-ActionCTA-options_text text_alert">{option.valor1}</div>
                         </div>
                         <div className="PartidoEncuentro-ActionCTA-options">
                             <div className="PartidoEncuentro-ActionCTA-options_text">-8.5</div>
-                            <div className="PartidoEncuentro-ActionCTA-options_text text_alert">{option.val2}</div>
+                            <div className="PartidoEncuentro-ActionCTA-options_text text_alert">{option.valor2}</div>
                         </div>
 
                     </div>
