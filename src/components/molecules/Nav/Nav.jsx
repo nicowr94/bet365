@@ -93,9 +93,13 @@ export default function Nav({option = 1}) {
 
           {
             user
-            ? <div className={"nav-container-options-container-item " + ( option === 3 ? "nav-container-options-container-item_LinkSelected" : "")}>
-                <div>Mis apuestas</div>
-              </div>
+            ? 
+            
+            <Link to={"/misApuestas"} >
+                <div className={"nav-container-options-container-item " + ( option === 3 ? "nav-container-options-container-item_LinkSelected" : "")}>
+                  <div>Mis apuestas</div>
+                </div>
+            </Link>
             : null
           }
 

@@ -168,18 +168,18 @@ export default function DirectoBasquetbol({getImages, dataDeport}) {
   const title_options = [{label:'Apuestas al encuentro'},{label:'Empate al final del tiempo reglamentario'}]
 
   const lista_imagenes = [
-    "team1.svg",
-    "team2.svg",
-    "team3.svg",
-    "team4.svg",
-    "team5.svg",
-    "team6.svg",
-    "team7.svg",
-    "team8.svg",
-    "team9.svg",
-    "team10.svg",
-    "team11.svg",
-    "team12.svg",
+    "basquet/team1.svg",
+    "basquet/team2.svg",
+    "basquet/team3.svg",
+    "basquet/team4.svg",
+    "basquet/team5.svg",
+    "basquet/team6.svg",
+    "basquet/team7.svg",
+    "basquet/team8.svg",
+    "basquet/team9.svg",
+    "basquet/team10.svg",
+    "basquet/team11.svg",
+    "basquet/team12.svg",
 ]
 
 let itemDB = []

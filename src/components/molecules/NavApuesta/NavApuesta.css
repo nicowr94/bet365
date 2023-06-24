@@ -1,0 +1,91 @@
+.m-navApuesta-container{
+    height: 115px;
+    background-size: 100% 100%;
+    background-image: linear-gradient(rgba(12,22,20,.1),transparent 20px),radial-gradient(122% 370px at center -220px,#009969 0,transparent 100%),linear-gradient(to right bottom,#0c1614,#084436);
+    padding: 15px 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid#189970;;
+}
+
+.m-navApuesta-container-title{
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.m-navApuesta-container-title:after {
+    display: inline-block;
+    content: "";
+    position: relative;
+    top: -2px;
+    width: 13px;
+    height: 8px;
+    margin-left: 7px;
+    background-color: #fff;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: 13px 8px;
+    mask-size: 13px 8px;
+
+    --mixin-svg-inlined: url(data:image/svg+xml;charset=utf-8,%3Csvg width='14' height='9' viewBox='0 0 14 9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 0l1.414 1.414-6.707 6.707L0 1.414 1.414 0l5.293 5.292z' fill='%23FFF'/%3E%3C/svg%3E);
+    -webkit-mask-image: var(--mixin-svg-inlined);
+}
+
+.m-navApuesta-container-back{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 12px;
+    color: #fff;
+    opacity: .8;
+}
+
+.m-navApuesta-container-back:before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 8px;
+    background-color: #fff;
+    -webkit-mask-size: 5px 8px;
+    mask-size: 5px 8px;
+    -webkit-mask-position: center left;
+    mask-position: center left;
+    margin-right: 5px;
+
+    --mixin-svg-inlined: url(data:image/svg+xml;charset=utf-8,%3Csvg height='12' viewBox='0 0 7 12' width='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.216 12L7 11.243 1.569 6 7 .757 6.216 0 .784 5.243 0 6l.784.757z' fill='{0}' fill-rule='evenodd'/%3E%3C/svg%3E);
+    -webkit-mask-image: var(--mixin-svg-inlined);
+}
+
+.m-navApuesta-container-list{
+    display: flex;
+    }
+.m-navApuesta-container-list-options, .m-navApuesta-container-list-options--selected{
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+    font-size: 13px;
+    min-width: 40px;
+    opacity: .8;
+    text-align: center;
+    white-space: pre;
+    height: 26px;
+    line-height: 27px;
+    padding: 0 6px;
+    margin: 0 4px;  
+}
+
+.m-navApuesta-container-list-options--selected{
+    opacity: 1;
+    font-weight: 700;
+    color: #282828;
+    border-radius: 13px;
+    background-color: #00ffb6;
+}

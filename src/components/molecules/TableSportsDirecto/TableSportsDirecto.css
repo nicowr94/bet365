@@ -196,6 +196,7 @@
 .m-TableSportsDirecto-container-number-body-item .text__subtittle {
     gap: 8px;
     display: flex;
+    cursor: pointer;
 }
 
 .m-TableSportsDirecto-container-number-body-item .text__subtittle div{

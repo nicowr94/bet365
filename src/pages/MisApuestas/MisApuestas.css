@@ -1,0 +1,46 @@
+.p-MisApuestas {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.p-MisApuestas-container {
+  display: flex;
+  max-width: 1430px;
+  width: 100%;
+  justify-content: space-between;
+  min-height: 100px;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.p-MisApuestas-options {
+  padding: 0 15px;
+}
+.m-navApuesta-container-list {
+    padding: 20px 0;
+}
+
+.m-navApuesta-container-info{
+    padding: 30px 15px;
+    background: linear-gradient(to bottom right,#303d39,#353535);
+    color: #ddd;
+    text-align: center;
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 600px;
+}
+.m-navApuesta-container-info-title{
+    
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 18px;
+    color: #ddd;
+}
+.m-navApuesta-container-info-subtitle{
+    font-size: 11px;
+    line-height: 18px;
+    color: #ddd;
+}

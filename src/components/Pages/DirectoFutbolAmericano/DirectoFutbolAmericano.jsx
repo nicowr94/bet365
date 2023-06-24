@@ -490,10 +490,6 @@ export default function DirectoFutbolAmericano({getImages, dataDeport}) {
     })
   }
 
-
-  console.log('nicolas');
-  console.log(itemDB);
-
   return (
     <div className='home_layout'>
         <div style={{ backgroundImage: 'linear-gradient(160deg, #4D422E 0%, #383838 400px)'}}>

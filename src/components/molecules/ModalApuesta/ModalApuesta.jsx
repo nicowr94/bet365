@@ -7,9 +7,11 @@ export default function ModalApuesta({closeModal, position}) {
 
     const { apuesta, setApuesta } = useContext(UserContext);
     const [confirmacionApuesta, setConfirmacionApuesta] = useState(false);
+    const [inputValue, setInputValue] = useState(null);
 
     const removeModal = () =>{
         setApuesta({})
+        setInputValue(null)
     }
 
     const crearApuesta = () =>{
@@ -47,12 +49,23 @@ export default function ModalApuesta({closeModal, position}) {
                 <div className='m-ModalApuesta-data-options-subtitle'>Importe</div>
                 <div className='m-ModalApuesta-options-input'>
                     <div className='m-ModalApuesta-data-title-monto m-ModalApuesta-data-title-monto2'>$</div>
-                    <input type="number" />
+                    <input type="number" value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
                 </div>
             </div>
-            <div className='m-ModalApuesta-options-item m-ModalApuesta-options-item-button' onClick={()=>{crearApuesta()}}>
-                Realizar apuesta
-            </div>
+
+            {
+                inputValue>0
+                ? 
+                    <div className={'m-ModalApuesta-options-item m-ModalApuesta-options-item-button m-ModalApuesta-button-active'} onClick={()=>{crearApuesta()}}>
+                        Realizar apuesta
+                        <p className='m-ModalApuesta-ganancia'>Ganancias potenciales $ {(apuesta.monto*inputValue).toFixed(2)}</p>
+                    </div>
+                : 
+                    <div className='m-ModalApuesta-options-item m-ModalApuesta-options-item-button '>
+                        Realizar apuesta
+                    </div>
+            }
+
         </div>
     </div>
 </div>

@@ -9,21 +9,23 @@ const UserProvider = ({children}) => {
   const [deport, setDeport] = useState(undefined);
   const [data, setData] = useState({});
   const [apuesta, setApuesta] = useState({});
+  const [titleDeport, setTitleDeport] = useState(undefined);
 
   useEffect(() => {
     const validStorage = async () => {
       try {
-        const mySesion = (localStorage.getItem("user")) // JSON.parse(localStorage.getItem("user"))
-        const myDeport = localStorage.getItem("deport") 
-        const myData = localStorage.getItem("data") 
+        const mySesion = await localStorage.getItem("user") // JSON.parse(localStorage.getItem("user"))
+        const myDeport = await localStorage.getItem("deport") 
+        const myTitleDeport = await localStorage.getItem("titleDeport") 
+        const myData = await localStorage.getItem("data") 
 
         const dataSave = !myData ? dataDefault : JSON.parse(myData);
         if (!myData) localStorage.setItem("data", JSON.stringify(dataSave))
-
         // const dataSave = JSON.parse(myData) === {} ? dataDefault : JSON.parse(myData)
-        setUser(JSON.parse(mySesion));
-        setDeport(JSON.parse(myDeport));
         setData(dataSave);
+        setDeport(JSON.parse(myDeport));
+        setTitleDeport(myTitleDeport);
+        setUser(JSON.parse(mySesion));
       } catch (error) {
         console.log(`ERROR: ${error.message}`)
       }
@@ -33,7 +35,7 @@ const UserProvider = ({children}) => {
   }, []);
   
   return (
-    <UserContext.Provider value={{user, setUser, deport, setDeport, data, setData, apuesta, setApuesta}}>
+    <UserContext.Provider value={{user, setUser, deport, setDeport, data, setData, apuesta, setApuesta, titleDeport, setTitleDeport}}>
       {children}
     </UserContext.Provider>
   );

@@ -180,6 +180,8 @@ export const Home = () => {
               numb1_aux: valor1_blanco,
               numb2: valor2_amarillo,
               numb2_aux: valor2_blanco,
+              numb3:valor3_amarillo,
+              numb3_aux: valor3_blanco
             },
           };
       

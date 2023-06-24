@@ -293,7 +293,7 @@ export default function DirectoBeisbol({getImages, dataDeport}) {
       ]
     }
 
-  const title_options = [{label:'Línea de gol - En directo'},{label:'Hándicap asiático - En directo'},{label:'Encuentro - Goles'},{label:'Resultado final'}]
+  const title_options = [{label:'Apuestas al encuentro'}]
 
   const lista_imagenes = [
     "https://www.imagecache365.com/SoccerSilks/Mallorca_Home_23.svg",

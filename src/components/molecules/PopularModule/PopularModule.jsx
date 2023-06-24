@@ -4,7 +4,17 @@ import {UserContext} from '../../../../src/context/UserProvider';
 
 export default function PopularModule() {
 
-    const {  data } = useContext(UserContext);
+    const { data, setApuesta } = useContext(UserContext);
+
+
+    const setDataModal = (element, team, val) => {
+        const data = {
+            team_select: team,
+            monto: val,
+            title: element.texto1
+        }
+        setApuesta(data)
+    }
 
     const dataDefault =[{
         titulo:'Sevilla v Roma',
@@ -31,7 +41,6 @@ export default function PopularModule() {
     ]
 
     const itemDB = data.length>0 ? data.find((item) => item.tabla === "Aumento de apuesta").items : dataDefault;
-
 
   return (
     <div className="PopularModule">
@@ -61,7 +70,7 @@ export default function PopularModule() {
                         <div className="PopularModule_Info-item-data-text">{option.texto2}</div>
                         <div className="PopularModule_Info-item-data-text-end ">{option.texto3}</div>
                     </div>
-                    <div className="PopularModule_Info-item-price">
+                    <div className="PopularModule_Info-item-price"  onClick={() =>{setDataModal(option, option.titulo, option.valor_nuevo)}}>
                         <div className="PopularModule_Info-item-price-old">{option.valor_anterior}</div>
                         <div className="PopularModule_Info-item-price-icon PopularModule_HeaderChevron"></div>
                         <div className="PopularModule_Info-item-price-new">{option.valor_nuevo}</div>

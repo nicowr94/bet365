@@ -1,8 +1,17 @@
-import React from 'react'
+import {useContext} from 'react'
+import {UserContext} from '../../../../src/context/UserProvider';
 import "./PartidosOfrecidos.css";
 
 export default function PartidosOfrecidos({title = 'Partidos ofrecidos', data}) {
-
+    const { apuesta, setApuesta } = useContext(UserContext);
+    const setDataModal = (element, team, val) => {
+        const data = {
+            team_select: team,
+            monto: val,
+            title: element.equipo1 + " vs " + element.equipo2,
+        }
+        setApuesta(data)
+    }
 
   return (
     <div className="PartidosOfrecidos">
@@ -60,30 +69,30 @@ export default function PartidosOfrecidos({title = 'Partidos ofrecidos', data}) 
                         </div>
                     </div>
                     <div className="PartidosOfrecidos-item-price">
-                        <div className="PartidosOfrecidos-ActionCTA-options">
+                        <div className="PartidosOfrecidos-ActionCTA-options"  onClick={() =>{setDataModal(option, option.equipo1, option.valor1)}}>
                             <div className="PartidosOfrecidos-ActionCTA-options_text">{option.valor1_blanco ? option.valor1_blanco : 1}</div>
                             <div className="PartidosOfrecidos-ActionCTA-options_text text_alert">{option.valor1}</div>
                         </div>
-                            {
-                                option.valorx
-                                ? <>
-                                    <div className="PartidosOfrecidos-ActionCTA-options">
-                                        <div className="PartidosOfrecidos-ActionCTA-options_text">{option.valorx_blanco ? option.valorx_blanco : 'X'}</div>
-                                        <div className="PartidosOfrecidos-ActionCTA-options_text text_alert">{option.valorx}</div>
-                                    </div>
+                        {
+                            option.valorx
+                            ? <>
+                                <div className="PartidosOfrecidos-ActionCTA-options"  onClick={() =>{setDataModal(option, "Empate", option.valorx)}} >
+                                    <div className="PartidosOfrecidos-ActionCTA-options_text">{option.valorx_blanco ? option.valorx_blanco : 'X'}</div>
+                                    <div className="PartidosOfrecidos-ActionCTA-options_text text_alert">{option.valorx}</div>
+                                </div>
 
-                                    <div className="PartidosOfrecidos-ActionCTA-options">
-                                        <div className="PartidosOfrecidos-ActionCTA-options_text">{option.valor2_blanco ? option.valor2_blanco : 2}</div>
-                                        <div className="PartidosOfrecidos-ActionCTA-options_text text_alert">{option.valor2}</div>
-                                    </div>
-                                </>
-                                : <>
-                                    <div className="PartidosOfrecidos-ActionCTA-options">
-                                        <div className="PartidosOfrecidos-ActionCTA-options_text">{option.valor2_blanco ? option.valor2_blanco : 2}</div>
-                                        <div className="PartidosOfrecidos-ActionCTA-options_text text_alert">{option.valor2}</div>
-                                    </div>
-                                </>
-                            }
+                                <div className="PartidosOfrecidos-ActionCTA-options" onClick={() =>{setDataModal(option, option.equipo2, option.valor2)}}>
+                                    <div className="PartidosOfrecidos-ActionCTA-options_text">{option.valor2_blanco ? option.valor2_blanco : 2}</div>
+                                    <div className="PartidosOfrecidos-ActionCTA-options_text text_alert">{option.valor2}</div>
+                                </div>
+                            </>
+                            : <>
+                                <div className="PartidosOfrecidos-ActionCTA-options" onClick={() =>{setDataModal(option, option.equipo2, option.valor2)}}>
+                                    <div className="PartidosOfrecidos-ActionCTA-options_text">{option.valor2_blanco ? option.valor2_blanco : 2}</div>
+                                    <div className="PartidosOfrecidos-ActionCTA-options_text text_alert">{option.valor2}</div>
+                                </div>
+                            </>
+                        }
                     </div>
                 </div>
             ))}

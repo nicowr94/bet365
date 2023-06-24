@@ -12,6 +12,7 @@ export default function HomeBeisbol({dataDeport}) {
 
   const partidosProximo = [
     {label:'Apuestas destacadas'},
+    {label:'Apuestas al partido'},
     {label:'Apuestas principales'},
     {label:'Apuestas a las entradas'},
     {label:'Apuestas al equipo'},
@@ -89,8 +90,6 @@ let itemDB = infoOptions
         return element
     })
   }
-  console.log('adadadsadsadasdsadsad');
-  console.log(itemDB);
 
   return (
     <div className='home_layout'>
@@ -99,9 +98,9 @@ let itemDB = infoOptions
       <PopularModule />
       <Banner />
 
-      <Title text="MBL"/>
+      <Title text="MLB"/>
       {partidosProximo.map((c,index) => (
-          <Card text={c.label} key={"partidosProximo-"+index}/>
+          <Card text={c.label} key={"partidosProximo-"+index} title={"MLB"}/>
       ))}
       <Title text="Triple A - Minor League"/>
       {competiciones.map((c,index) => (

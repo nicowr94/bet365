@@ -1,0 +1,54 @@
+.p-ApuestaAlPartido-menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+
+}
+.p-ApuestaAlPartido-list{
+    display: flex;
+    align-items: center;
+}
+.p-ApuestaAlPartido-list-subtitle{
+    color: #fff;
+    font-size: 11px;
+    font-weight: 400;
+    cursor: pointer;
+    line-height: 13px;
+}
+.p-ApuestaAlPartido-list-subtitle:after{
+    display: inline-block;
+    content: "";
+    width: 8px;
+    height: 5px;
+    margin-left: 5px;
+    margin-top: 2px;
+    background-color: #fff;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    --mixin-svg-inlined: url(data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath fill='%23333' fill-rule='evenodd' d='M12 .784L11.243 0 6 5.431.757 0 0 .784l5.243 5.432L6 7l.757-.784z'/%3E%3C/svg%3E);
+    -webkit-mask-image: var(--mixin-svg-inlined);
+}
+.p-ApuestaAlPartido-list .a-title{
+    margin: 0;
+}
+
+.p-ApuestaAlPartido-list-option, .p-ApuestaAlPartido-list-option--border{
+    font-size: 11px;
+    color: #ddd;
+    text-align: left;
+    line-height: 15px;
+    padding: 2px 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.p-ApuestaAlPartido-list-option--border{
+    border: 1px solid white;
+}

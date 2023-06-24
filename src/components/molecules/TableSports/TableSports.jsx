@@ -12,8 +12,6 @@ export default function TableSports({title, info, bg_color = '#364D3C', title_da
         title: element.info.text1 + " vs " + element.info.text2,
     }
     setApuesta(data)
-    console.log(data);
-    console.log(team);
   }
 
   return (

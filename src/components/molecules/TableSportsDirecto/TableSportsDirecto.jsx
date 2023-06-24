@@ -16,9 +16,8 @@ export default function TableSportsDirecto({title, info, bg_color = '#364D3C', t
           title: element.info.text1 + " vs " + element.info.text2,
       }
       setApuesta(data)
-      console.log(data);
-      console.log(team);
     }
+
 
     return (
         // <div>{title}</div>
@@ -64,14 +63,14 @@ export default function TableSportsDirecto({title, info, bg_color = '#364D3C', t
                                                 (
                                                     <>
                                                         <div className="text__subtittle item_image" >
-                                                            { i.info.team1_url ? <img src={require(`../../../icons/basquet/${i.info.team1_url}`)}/> : ((i.info.team1_principal) ? <div className='m-TableSportsDirecto-text__subtittle--icon-principal'></div> : <div className='m-TableSportsDirecto-text__subtittle--icon'></div> )}
+                                                            { i.info.team1_url ? <img src={require(`../../../icons/${i.info.team1_url}`)}/> : ((i.info.team1_principal) ? <div className='m-TableSportsDirecto-text__subtittle--icon-principal'></div> : <div className='m-TableSportsDirecto-text__subtittle--icon'></div> )}
                                                             {/* { (!i.info.team1_url && i.info.team1_principal) ? <div className='m-TableSportsDirecto-text__subtittle--icon'></div> : null} */}
                                                             
                                                             {i.info.text1}
                                                         </div>
                                                         <div className="text__subtittle item_image" >
                                                             {/* { i.info.team2_url? <img src={i.info.team2_url}/> : null} */}
-                                                            { i.info.team2_url ? <img src={require(`../../../icons/basquet/${i.info.team2_url}`)}/> : ((i.info.team2_principal) ? <div className='m-TableSportsDirecto-text__subtittle--icon-principal'></div> : <div className='m-TableSportsDirecto-text__subtittle--icon'></div> )}
+                                                            { i.info.team2_url ? <img src={require(`../../../icons/${i.info.team2_url}`)}/> : ((i.info.team2_principal) ? <div className='m-TableSportsDirecto-text__subtittle--icon-principal'></div> : <div className='m-TableSportsDirecto-text__subtittle--icon'></div> )}
 
                                                             {i.info.text2}
                                                         </div>

@@ -25,7 +25,7 @@ export const UserHistorial = () => {
             contentOption = <UsuarioHistorialApuestaDeterminada />
             break;
         case 1:
-            contentOption = <UsuarioHistorialApuestaDeterminada />
+            contentOption = <UsuarioHistorialApuestaDeterminada contentApuesta={true}/>
             break;
         case 2:
             contentOption = <UsuarioHistorialApuestaDeterminada option={false} />

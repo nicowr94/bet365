@@ -10,6 +10,9 @@ import UserMiCuenta from "../pages/UserMiCuenta/UserMiCuenta";
 import UserControles from "../pages/UserControles/UserControles";
 import UserHistorial from "../pages/UserHistorial/UserHistorial";
 import UserMiActividad from "../pages/UserMiActividad/UserMiActividad";
+import ApuestaAlPartido from "../pages/ApuestaAlPartido/ApuestaAlPartido";
+import MisApuestasPage from "../pages/MisApuestas/MisApuestas";
+
 import UserAdmin from "../pages/Admin/Admin";
 import NotFound from "../pages/NotFound/NotFound";
 
@@ -39,7 +42,9 @@ export default function AppRouter() {
 
           <Route path="/" Component={HomePage} exact />
           <Route path="deport" Component={HomeDeportPage} exact/>
+          <Route path="deport/ApuestaAlPartido" Component={ApuestaAlPartido} exact/>
           <Route path="directo" Component={DirectoDeportPage} exact/>
+          <Route path="misApuestas" Component={MisApuestasPage} exact/>
           <Route path="usuario/banco" Component={BancoUserPage} exact/>
           <Route path="usuario/mensaje" Component={BancoMensajePage} exact/>
           <Route path="usuario/miCuenta" Component={UserMiCuenta} exact/>

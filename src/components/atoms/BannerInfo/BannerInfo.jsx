@@ -8,12 +8,10 @@ export default function BannerInfo() {
   const setDataModal = (element, team, val) => {
     const data = {
         team_select: team,
-        monto: val,
+        monto:  Number(val).toFixed(2) > 0 ? Number(val).toFixed(2) : 1,
         title: element.equipo1 + " vs " + element.equipo2,
     }
     setApuesta(data)
-    console.log(data);
-    console.log(team);
   }
 
   const dataDefault = {
@@ -63,18 +61,18 @@ export default function BannerInfo() {
           </div>
         </div>
         <div className="bannerInfo-ActionCTA">
-          <div className="bannerInfo-ActionCTA-options">
+          <div className="bannerInfo-ActionCTA-options"  onClick={() =>{setDataModal(itemBannerHome, itemBannerHome?.equipo1, itemBannerHome?.puntaje_equipo1)}}>
             <div className="bannerInfo-ActionCTA-options_text">{itemBannerHome?.equipo1}</div>
-            <div className="bannerInfo-ActionCTA-options_text text_alert"  onClick={() =>{setDataModal(itemBannerHome, itemBannerHome?.equipo1, itemBannerHome?.puntaje_equipo1)}}>{itemBannerHome?.puntaje_equipo1}</div>
+            <div className="bannerInfo-ActionCTA-options_text text_alert" >{itemBannerHome?.puntaje_equipo1}</div>
           </div>
-          <div className="bannerInfo-ActionCTA-options">
+          <div className="bannerInfo-ActionCTA-options"  onClick={() =>{setDataModal(itemBannerHome, 'Empate', itemBannerHome?.empate)}}>
             <div className="bannerInfo-ActionCTA-options_text">Empate</div>
-            <div className="bannerInfo-ActionCTA-options_text text_alert"  onClick={() =>{setDataModal(itemBannerHome, 'Empate', itemBannerHome?.empate)}}>{itemBannerHome?.empate}</div>
+            <div className="bannerInfo-ActionCTA-options_text text_alert" >{itemBannerHome?.empate}</div>
           </div>
 
-          <div className="bannerInfo-ActionCTA-options">
+          <div className="bannerInfo-ActionCTA-options" onClick={() =>{setDataModal(itemBannerHome, itemBannerHome?.equipo2, itemBannerHome?.puntaje_equipo2)}}>
             <div className="bannerInfo-ActionCTA-options_text">{itemBannerHome?.equipo2}</div>
-            <div className="bannerInfo-ActionCTA-options_text text_alert"  onClick={() =>{setDataModal(itemBannerHome, itemBannerHome?.equipo2, itemBannerHome?.puntaje_equipo2)}}>{itemBannerHome?.puntaje_equipo2}</div>
+            <div className="bannerInfo-ActionCTA-options_text text_alert" >{itemBannerHome?.puntaje_equipo2}</div>
           </div>
         </div>
       </div>
