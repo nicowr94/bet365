@@ -1,22 +1,27 @@
-import React from 'react'
+import {useContext} from 'react'
 import SwitchMultiple from '../../atoms/SwitchMultiple/SwitchMultiple'
 import TitleSimple from '../../atoms/TitleSimple/TitleSimple'
 import LayoutGrafico from '../../molecules/LayoutGrafico/LayoutGrafico'
 import imagen from '../../../img/banner_controles.png';
 import "./UsuarioControlesMiActividad.css";
+import {UserContext} from '../../../../src/context/UserProvider';
 
 export default function UsuarioControlesMiActividad() {
+
+    const { data} = useContext(UserContext);
+
+    const dataUsuarioExcel = data.length > 0 ? data.find((item) => item.tabla === "Usuario").items[0] : {}
 
     const listGraficos = [{
             title:'Ganancias / Pérdidas',
             desc:'El total de sus ganancias menos el importe total de apuestas',
-            monto:'$0',
+            monto:'$'+dataUsuarioExcel.ganancias_perdidas,
             monto_desc:'28 may - 3 jun',
             body_title1:'No hay información disponible sobre el período seleccionado.',
         },{
             title:'Depósitos netos',
             desc:'El total de sus depósitos menos el total de sus retiros',
-            monto:'$4000.00',
+            monto:'$'+dataUsuarioExcel.depositos_neto,
             monto_desc:'28 may - 3 jun',
             body_title1:'Total de depósitos',
             body_title2:'Total de depósitos',

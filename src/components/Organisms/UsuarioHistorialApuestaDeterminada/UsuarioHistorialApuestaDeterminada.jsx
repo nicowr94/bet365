@@ -16,7 +16,7 @@ export default function UsuarioHistorialApuestaDeterminada({option = true, conte
     const [openInfo, setOpenInfo] = useState(false);
     
     const fechaRangoApuesta = <>
-                                <DatePicker start_date="31/05/2023" end_date="04/06/2023"/>
+                                <DatePicker start_date="01/01/2023" end_date="24/06/2023"/>
                                 <p className="o-UsuarioMensajeNuevo-content-text">Tenga en cuenta: el período máximo que se puede mostrar es de 6 meses.</p>
                                 <div onClick={()=>{setOpenInfo(true)}}>
                                     <Button text="Mostrar archivo" type={1} />
