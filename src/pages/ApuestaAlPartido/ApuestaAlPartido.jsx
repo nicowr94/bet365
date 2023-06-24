@@ -12,7 +12,7 @@ import Title from "../../components/atoms/Title/Title";
 import TableSportsDirecto from "../../components/molecules/TableSportsDirecto/TableSportsDirecto";
 import Footer from "../../components/molecules/Footer/Footer";
 
-export const ApuestaAlPartido = () => {
+export default function ApuestaAlPartido () {
 
   const { apuesta, setApuesta, titleDeport, data } = useContext(UserContext);
   const [modal, setModal] = useState(true);
@@ -135,16 +135,16 @@ export const ApuestaAlPartido = () => {
     dataDeport = itemDB.length > 0 ? itemDB.find((item) => item?.deporte === "beisbol") : {}
 
   const lista_imagenes = [
-    "basquet/team1.svg",
-    "basquet/team2.svg",
-    "basquet/team3.svg",
-    "basquet/team4.svg",
-    "basquet/team5.svg",
-    "basquet/team6.svg",
-    "basquet/team7.svg",
-    "basquet/team8.svg",
-    "basquet/team9.svg",
-    "basquet/team10.svg",
+    "beisbol/team1.svg",
+    "beisbol/team2.svg",
+    "beisbol/team3.svg",
+    "beisbol/team4.svg",
+    "beisbol/team5.svg",
+    "beisbol/team6.svg",
+    "beisbol/team7.svg",
+    "beisbol/team8.svg",
+    "beisbol/team9.svg",
+    "beisbol/team10.svg",
 ]
 
 function getImages(lista) {
@@ -228,6 +228,4 @@ let infoData = []
     </>
   );
 };
-
-export default ApuestaAlPartido;
 
