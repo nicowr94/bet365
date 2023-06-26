@@ -39,7 +39,7 @@ export default function ModalApuesta({closeModal, position}) {
                     <div className='m-ModalApuesta-data-title-title'>{apuesta.team_select}</div>
                     <div className='m-ModalApuesta-data-title-monto'>{apuesta.monto}</div>
                 </div>
-                <div className='m-ModalApuesta-data-title-subtitle'>Resultado final</div>
+                <div className='m-ModalApuesta-data-title-subtitle'>{apuesta.subtitle ? apuesta.subtitle : 'Resultado final'}</div>
                 <div className='m-ModalApuesta-data-title-subtitle'>{apuesta.title}</div>
             </div>
             

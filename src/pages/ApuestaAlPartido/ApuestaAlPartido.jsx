@@ -9,7 +9,7 @@ import ModalApuesta from "../../components/molecules/ModalApuesta/ModalApuesta";
 import {UserContext} from '../../../src/context/UserProvider';
 import NavApuesta from "../../components/molecules/NavApuesta/NavApuesta";
 import Title from "../../components/atoms/Title/Title";
-import TableSportsDirecto from "../../components/molecules/TableSportsDirecto/TableSportsDirecto";
+import TablaApuesta from "../../components/molecules/TablaApuesta/TablaApuesta";
 import Footer from "../../components/molecules/Footer/Footer";
 
 export default function ApuestaAlPartido () {
@@ -67,13 +67,22 @@ export default function ApuestaAlPartido () {
             flecha,
             hora,
             equipo1,
+            equipo1_info,
             equipo2,
+            equipo2_info,
             valor1_amarillo,
             valor2_amarillo,
             valor3_amarillo,
+            valor4_amarillo,
+            valor5_amarillo,
+            valor6_amarillo,
             valor1_blanco,
             valor2_blanco,
             valor3_blanco,
+            valor4_blanco,
+            valor5_blanco,
+            valor6_blanco,
+            
             columna1_valor1,
             columna1_valor2,
             columna2_valor1,
@@ -103,7 +112,9 @@ export default function ApuestaAlPartido () {
               team1_url: '', // Agrega aquí la URL del equipo 1 si es necesario
               team2_url: '', // Agrega aquí la URL del equipo 2 si es necesario
               text1: equipo1,
+              equipo1_info:equipo1_info,
               text2: equipo2,
+              equipo2_info:equipo2_info,
               count: hora,
               count2: `${flecha} >`,
               numb1: columna1_valor1,
@@ -121,7 +132,14 @@ export default function ApuestaAlPartido () {
               numb2: valor2_amarillo,
               numb2_aux: valor2_blanco,
               numb3:valor3_amarillo,
-              numb3_aux: valor3_blanco
+              numb3_aux: valor3_blanco,
+
+              numb4: valor4_amarillo,
+              numb4_aux: valor4_blanco,
+              numb5: valor5_amarillo,
+              numb5_aux: valor5_blanco,
+              numb6:valor6_amarillo,
+              numb6_aux: valor6_blanco
             },
           };
       
@@ -192,8 +210,9 @@ let infoData = []
     <>
       <HomeTemplate>
         {/* <Inicio /> */}
-        <>
+        <div style={{background:'#383838'}}>
             <NavApuesta title={titleDeport}/>
+
 
             <div className="p-ApuestaAlPartido-menu">
                 <div className="p-ApuestaAlPartido-list">
@@ -219,9 +238,9 @@ let infoData = []
             } */}
 
             {infoData.map((i,index) => {
-               return <TableSportsDirecto key={"NavDeport-options-"+index}  title={i.titulo} info={i.items} title_data={[{name:'Hándicap'},{name:'Total'},{name:'Ganador'}]} />
+               return <TablaApuesta key={"NavDeport-options-"+index}  title={i.titulo} info={i.items} title_data={[{name:'Ganador'},{name:'Total'},{name:'Hándicap'}]} />
             })}
-        </>
+        </div>
         <Footer />
       </HomeTemplate>
       <ModalApuesta />

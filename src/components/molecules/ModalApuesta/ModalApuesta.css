@@ -33,6 +33,7 @@
 .m-ModalApuesta-data-title{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 .m-ModalApuesta-options, .m-ModalApuesta-options-input{
     display: flex;

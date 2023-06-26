@@ -1,0 +1,29 @@
+
+.m-tableApuesta-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0px;
+}
+.m-TablaAporte-container-text-body-item-text--column{
+    align-items: flex-start;
+}
+.m-TablaAporte-container-text-body-item-content{
+    padding-top: 15PX;
+}
+.m-tablaApuesta-listTeam{
+    gap: 5px !important;
+}
+.m-tablaApuesta-listTeam-info{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 11px;
+    color: #ccc;
+    height: 15px;
+    line-height: 15px;
+}
+.text__apuesta__subtittle img{
+    max-height: 25px;
+    max-width: 25px;
+    height: initial !important;
+}

@@ -16,13 +16,13 @@ export default function UsuarioControlesMiActividad() {
             title:'Ganancias / Pérdidas',
             desc:'El total de sus ganancias menos el importe total de apuestas',
             monto:'$'+dataUsuarioExcel.ganancias_perdidas,
-            monto_desc:'28 may - 3 jun',
+            monto_desc:dataUsuarioExcel.fechas_apuestas,
             body_title1:'No hay información disponible sobre el período seleccionado.',
         },{
             title:'Depósitos netos',
             desc:'El total de sus depósitos menos el total de sus retiros',
             monto:'$'+dataUsuarioExcel.depositos_neto,
-            monto_desc:'28 may - 3 jun',
+            monto_desc:dataUsuarioExcel.fechas_apuestas,
             body_title1:'Total de depósitos',
             body_title2:'Total de depósitos',
             body_title1_val:'$0',
@@ -34,12 +34,12 @@ export default function UsuarioControlesMiActividad() {
             body_title1:'Sin límite',
         },{
             title:'Importe apostado',
-            monto_desc:'28 may - 3 jun',
+            monto_desc:dataUsuarioExcel.fechas_apuestas,
             body_title1:'No hay información disponible sobre el período seleccionado.',
         },{
             title:'Tiempo empleado en el juego',
             monto:'0d 0h 0m',
-            monto_desc:'28 may - 3 jun',
+            monto_desc:dataUsuarioExcel.fechas_apuestas,
             body_title1:'No hay información disponible sobre el período seleccionado.',
         },{
             title:'Pausas obligatorias',
@@ -50,7 +50,7 @@ export default function UsuarioControlesMiActividad() {
 
         },{
             title:'Hora de realización de apuestas',
-            monto_desc:'28 may - 3 jun',
+            monto_desc:dataUsuarioExcel.fechas_apuestas,
             body_title1:'No hay información disponible sobre el período seleccionado.',
         }
         
